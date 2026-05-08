@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_quote_blocks",
+  "info": {
+    "displayName": "quote-block"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_project_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "string"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorRole": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

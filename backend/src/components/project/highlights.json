@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_project_highlights_s",
+  "info": {
+    "displayName": "highlights ",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

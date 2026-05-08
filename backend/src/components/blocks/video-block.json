@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_video_blocks",
+  "info": {
+    "displayName": "VideoBlock"
+  },
+  "options": {},
+  "attributes": {
+    "videoUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
