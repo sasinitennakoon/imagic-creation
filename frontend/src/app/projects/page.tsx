@@ -18,15 +18,13 @@ type ProjectsResponse = {
 };
 
 async function getProjects(): Promise<ProjectsResponse> {
-  const res = await fetch(
-    "http://localhost:1337/api/projects?populate=*&sort=createdAt:desc",
-    {
-      cache: "no-store",
-    }
-  );
+      const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort=createdAt:desc`,
+      { cache: "no-store" }
+    );
 
-  return res.json();
-}
+      return res.json();
+    }
 
 const categoryColors: Record<string, string> = {
   "web development": "bg-blue-500/20 text-white",
@@ -136,7 +134,7 @@ export default async function ProjectsPage({
                 <div className="relative overflow-hidden h-[240px]">
                   {img && (
                     <img
-                      src={`http://localhost:1337${img}`}
+                      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img}`}
                       alt={p.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
