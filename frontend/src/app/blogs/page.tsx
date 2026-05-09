@@ -82,7 +82,7 @@ export default async function BlogsPage() {
                     <div className="relative w-full h-[220px] overflow-hidden">
                     {image ? (
                       <Image
-                        src={`http://localhost:1337${image}`}
+                        src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
                         alt={blog.title}
                         fill
                         unoptimized

@@ -39,7 +39,7 @@ export async function getBlogBySlug(slug: string) {
   if (!slug) return null;
 
   const res = await fetch(
-    `http://localhost:1337/api/blogs?filters[slug][$eq]=${slug}&populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/blogs?populate=*`,
     { cache: "no-store" }
   );
 

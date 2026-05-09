@@ -73,8 +73,8 @@ export default async function BlogDetailPage({
     blog?.coverImage?.url;
 
   const imageUrl = imagePath
-    ? `http://localhost:1337${imagePath}`
-    : null;
+  ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${imagePath}`
+  : null;
 
   return (
     <main className="bg-[#0F0F0F] text-white min-h-screen">

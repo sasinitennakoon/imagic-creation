@@ -1,6 +1,6 @@
 async function getProject(slug: string) {
   const res = await fetch(
-    `http://localhost:1337/api/projects?filters[slug][$eq]=${slug}&populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?filters[slug][$eq]=${slug}&populate=*`,
     { cache: "no-store" }
   );
   return res.json();
@@ -55,7 +55,7 @@ function renderBlock(block: any) {
             {block.images?.map((img: any) => (
               <img
                 key={img.id}
-                src={`http://localhost:1337${img.url}`}
+               src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
                 className="w-full rounded-lg"
               />
             ))}
@@ -119,7 +119,7 @@ export default async function ProjectPage({
       {/* COVER IMAGE */}
       {attrs.coverImage && (
         <img
-          src={`http://localhost:1337${attrs.coverImage.url}`}
+          src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${attrs.coverImage.url}`}
           className="w-full mt-8 rounded-xl"
         />
       )}
@@ -133,7 +133,7 @@ export default async function ProjectPage({
             {attrs.gallery.map((img: any) => (
               <img
                 key={img.id}
-                src={`http://localhost:1337${img.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
                 className="w-full rounded-lg"
               />
             ))}
