@@ -52,7 +52,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "We frame the world's most fleeting moments with intention, craft, and a distinct visual language that speaks before words do.",
     breadcrumb: "Photography",
-    mascot: "/mascots/photo-mascot.png",
+    mascot: "/mascots/photo-mascot11.png",
     whatWeDoImage: "/services/detail/photo-what.jpg",
     whatWeDoText:
       "Our photography team blends technical mastery with artistic intuition to produce imagery that resonates. From boardroom headshots to large-scale product campaigns, every shot is deliberately composed to serve your brand's unique story. We don't just point a camera — we craft a visual narrative that leaves a lasting impression on your audience.",
@@ -796,7 +796,7 @@ export default function ServiceDetailPage() {
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {service.title.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              <span className="bg-white bg-clip-text text-transparent">
                 {service.title.split(" ").slice(-1)}
               </span>
             </h1>
@@ -837,7 +837,7 @@ export default function ServiceDetailPage() {
                 src={service.mascot}
                 alt={`${service.title} mascot`}
                 fill
-                className="object-contain drop-shadow-[0_0_40px_rgba(138,43,226,0.4)]"
+                className="object-contain drop-shadow-[0_0_40px_rgba(138,43,226,0.4)] scale-150"
               />
             </div>
           </div>

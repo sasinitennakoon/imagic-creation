@@ -40,7 +40,7 @@ export default function FeaturedProjects() {
           <motion.h2 initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }} 
-            className="text-3xl md:text-5xl font-bold text-center" 
+            className="text-3xl sm:text-3xl md:text-5xl font-bold text-center" 
             style={{ fontFamily: "var(--font-heading)" }} >
             Our{" "}
             <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
@@ -141,7 +141,7 @@ export default function FeaturedProjects() {
             href="/projects"
             className="group flex items-center gap-3 px-8 py-3 rounded-full border border-white/20 text-white backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300"
         >
-            <span className="group-hover:underline">
+            <span className="group-hover:">
             View Our Full Portfolio
             </span>
 

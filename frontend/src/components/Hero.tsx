@@ -26,14 +26,14 @@ export default function Hero() {
       {/* CONTENT WRAPPER */}
       <div className="relative z-10 w-full">
         <div className="max-w-7xl mx-auto px-5 md:px-16 w-full">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
 
             {/* HEADING */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-[1.75rem] leading-snug sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Where{" "}
@@ -64,17 +64,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-row flex-wrap gap-3 md:gap-4 mt-7 md:mt-12"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-7 md:mt-12 w-full sm:w-auto items-stretch sm:items-start"
             >
               <a
                 href="/projects"
-                className="px-5 py-2.5 md:px-8 md:py-3.5 rounded-full text-sm md:text-base text-white backdrop-blur-md bg-[#8A2BE2]/50 border border-white/20 hover:bg-[#8A2BE2] transition"
+                className="px-5 py-2.5 md:px-8 md:py-3.5 rounded-full text-sm md:text-base text-white backdrop-blur-md bg-[#8A2BE2]/50 border border-white/20 hover:bg-[#8A2BE2] transition w-full sm:w-auto text-center"
               >
                 Explore Our Works
               </a>
               <a
-                href="#contact"
-                className="px-5 py-2.5 md:px-8 md:py-3.5 rounded-full text-sm md:text-base bg-white/10 text-white hover:scale-105 transition"
+                href="/contact"
+                className="px-5 py-2.5 md:px-8 md:py-3.5 rounded-full text-sm md:text-base bg-white/10 text-white hover:scale-105 transition w-full sm:w-auto text-center"
               >
                 Contact Us
               </a>

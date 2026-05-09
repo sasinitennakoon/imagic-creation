@@ -20,7 +20,7 @@ const services: Service[] = [
     title: "Photography",
     description:
       "Capturing moments with creativity and precision to tell powerful visual stories.",
-    image: "/services/photo.jpg",
+    image: "/services/photography.jpg",
     points: [
       "Corporate Photography",
       "Event Coverage",
@@ -33,7 +33,7 @@ const services: Service[] = [
     title: "Video Production",
     description:
       "We create cinematic and engaging videos tailored for brands and businesses.",
-    image: "/services/video.jpg",
+    image: "/services/video production.jpg",
     points: [
       "Commercial Videos",
       "Corporate Films",
@@ -47,7 +47,7 @@ const services: Service[] = [
     title: "Live Production",
     description:
       "Professional live event streaming and multi-camera production setups.",
-    image: "/services/live.jpg",
+    image: "/services/live production.jpg",
     points: [
       "Live Streaming",
       "Multi-Camera Setup",
@@ -56,53 +56,55 @@ const services: Service[] = [
     ],
   },
   {
-    slug: "graphic-design",
-    title: "Graphic Design",
-    description:
-      "Creative designs that elevate your brand identity and visual presence.",
-    image: "/services/design.jpg",
-    points: [
-      "Brand Identity",
-      "Posters & Flyers",
-      "Social Media Designs",
-      "Packaging Design",
-    ],
-    reverse: true,
-  },
-  {
-    slug: "ui-ux-design",
-    title: "UI/UX Design",
+    slug: "web-design",
+    title: "Web Design",
     description:
       "User-centered designs focused on usability and modern digital experiences.",
-    image: "/services/uiux.jpg",
+    image: "/services/web design.jpg",
     points: ["App Design", "Web Design", "Prototyping", "User Research"],
+    reverse: true,
   },
   {
     slug: "web-development",
     title: "Web Development",
     description:
       "Modern, fast, and scalable websites built with latest technologies.",
-    image: "/services/web.jpg",
+    image: "/services/web development.jpg",
     points: [
       "Frontend Development",
       "Backend Systems",
       "E-commerce Solutions",
       "CMS Integration",
     ],
-    reverse: true,
+    
   },
   {
     slug: "editing",
     title: "Editing",
     description:
       "Professional editing that enhances storytelling and visual impact.",
-    image: "/services/edit.jpg",
+    image: "/services/editing.jpg",
     points: [
       "Video Editing",
       "Color Grading",
       "Sound Editing",
       "Post Production",
     ],
+     reverse: true,
+  },
+    {
+    slug: "graphic-design",
+    title: "Graphic Design",
+    description:
+      "Creative designs that elevate your brand identity and visual presence.",
+    image: "/services/graphic design.jpg",
+    points: [
+      "Brand Identity",
+      "Posters & Flyers",
+      "Social Media Designs",
+      "Packaging Design",
+    ],
+   
   },
 ];
 

@@ -6,57 +6,64 @@ import CTA from "@/components/Cta";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
+const VisionIcon = "/icons/vision.png";
+const MissionIcon = "/icons/mission.png";
+
 const coreValues = [
   {
-    title: "Creativity",
+    icon: "/icons/Trophy.gif",
+    title: "Excellence in Everything",
     description:
-      "We craft unique visual experiences that capture attention and leave lasting impressions.",
+      "We're obsessed with quality. Every project receives the same meticulous attention to detail, from initial concept to final delivery.",
   },
   {
-    title: "Innovation",
+    icon: "/icons/Team.gif",
+    title: "Collaborative Partnership",
     description:
-      "We combine creativity with modern technology to deliver forward-thinking digital solutions.",
+      "We're obsessed with quality. Every project receives the same meticulous attention to detail, from initial concept to final delivery.",
   },
   {
-    title: "Quality",
+    icon: "/icons/lightbulb.gif",
+    title: "Creative Innovation",
     description:
-      "Every project is executed with precision, professionalism, and attention to detail.",
+      "We stay ahead of trends and technology, constantly exploring new techniques to deliver fresh, effective creative solutions.",
   },
   {
-    title: "Collaboration",
+    icon: "/icons/chat.gif",
+    title: "Transparent Communication",
     description:
-      "We work closely with clients to understand their vision and transform ideas into reality.",
+      "No surprises, no confusion. We keep you informed every step of the way with clear timelines, realistic expectations, and honest feedback.",
   },
 ];
 
 const processes = [
   {
     step: "01",
-    title: "Discovery",
+    title: "Understand",
     description:
-      "We understand your goals, audience, and project requirements before starting the creative process.",
-    gif: "/process/discovery.gif",
+      "We start by learning about your goals, ideas, and vision.",
+    gif: "/process/Brain.gif",
   },
   {
     step: "02",
-    title: "Planning",
+    title: "Create",
     description:
-      "We create structured strategies, concepts, and workflows to ensure smooth execution.",
-    gif: "/process/planning.gif",
+      "We explore concepts and bring ideas to life through design and production.",
+    gif: "/process/Cube 3d.gif",
   },
   {
     step: "03",
-    title: "Production",
+    title: "Refine",
     description:
-      "Our team brings ideas to life through high-quality visuals, design, and development.",
-    gif: "/process/production.gif",
+      "We carefully review, edit, and improve every detail.",
+    gif: "/process/Edit.gif",
   },
   {
     step: "04",
-    title: "Delivery",
+    title: "Deliver",
     description:
-      "We refine and finalize every detail to deliver impactful results that exceed expectations.",
-    gif: "/process/delivery.gif",
+      "We finalize and deliver a result that reflects your vision and purpose.",
+    gif: "/process/Success.gif",
   },
 ];
 
@@ -78,18 +85,22 @@ export default function AboutPage() {
             className="flex-1"
           >
             <h1
-              className="text-4xl md:text-6xl font-bold leading-tight"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              We Create{" "}
-              <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
-                Digital Experiences
-              </span>{" "}
-              That Inspire
-            </h1>
+          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight text-center md:text-left"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          The{" "}
+          <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+            Story
+          </span>
+          <br />
+          Behind{" "}
+          <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+            IMAGIC
+          </span>
+        </h1>
 
             <p
-              className="text-gray-300 mt-8 text-lg leading-relaxed max-w-xl"
+              className="text-gray-300 mt-4 md:mt-8 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl text-center md:text-left"
               style={{ fontFamily: "var(--font-body)" }}
             >
               IMAGIC is a creative production and digital solutions agency
@@ -107,7 +118,7 @@ export default function AboutPage() {
             className="flex-1 flex justify-center"
           >
             <Image
-              src="/Mascot 2.png"
+              src="/mascot 3.png"
               alt="Mascot"
               width={450}
               height={450}
@@ -127,32 +138,35 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex-1"
+            className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
           >
             <h2
-              className="text-3xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Who We Are
-            </h2>
+            className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Who{" "}
+            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              We
+            </span>{" "}
+            Are{" "}
+            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              Simply
+            </span>
+          </h2>
 
             <p
               className="text-gray-300 mt-6 leading-relaxed text-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              IMAGIC is a multidisciplinary creative agency specializing in
-              video production, photography, branding, UI/UX design, and web
-              development. We help brands communicate their story through
-              visually engaging and meaningful experiences.
+              Imagic is a creative production studio built on imagination, innovation, and storytelling.
             </p>
 
             <p
               className="text-gray-300 mt-6 leading-relaxed text-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Our mission is to combine creativity and innovation to create
-              unforgettable digital experiences that build strong connections
-              between brands and audiences.
+              We specialize in video production, live production, photography, editing, UI/UX design, web development, and graphic design — bringing ideas to life across every visual medium.
+Our team is made up of passionate creators who believe that every project is more than just work — it’s an experience, a story, a moment worth remembering.
             </p>
           </motion.div>
 
@@ -176,47 +190,53 @@ export default function AboutPage() {
       </section>
 
       {/* VISION & MISSION */}
-      <section className="w-full py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* VISION */}
-          <div className="border border-[#8A2BE2]/40 rounded-3xl p-10 bg-[#1A1A1A]">
-            <h3
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Our Vision
-            </h3>
+          <div className="bg-[#1A1A1A] p-10 rounded-3xl text-center flex flex-col items-center">
+            <Image src={VisionIcon} alt="Vision" width={60} height={60} />
+            <p className="text-sm text-gray-400 mt-3">Vision</p>
 
-            <p
-              className="text-gray-300 mt-6 leading-relaxed"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              To become a leading creative and digital solutions agency known
-              for innovation, storytelling, and impactful visual experiences.
-            </p>
-          </div>
+                <h3
+                className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                What{" "}
+                <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+                  Drives
+                </span>{" "}
+                Us{" "}
+              </h3>
 
-          {/* MISSION */}
-          <div className="border border-[#8A2BE2]/40 rounded-3xl p-10 bg-[#1A1A1A]">
-            <h3
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Our Mission
-            </h3>
+                <p className="text-gray-300 mt-4">
+                  To create impactful visual and digital experiences that help brands communicate, connect, and grow.
+                </p>
+              </div>
 
-            <p
-              className="text-gray-300 mt-6 leading-relaxed"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              To help businesses and individuals bring their ideas to life
-              through high-quality creative production, branding, and digital
-              innovation.
+              {/* MISSION */}
+              <div className="bg-[#1A1A1A] p-10 rounded-3xl text-center flex flex-col items-center">
+                <Image src={MissionIcon} alt="Mission" width={60} height={60} />
+                <p className="text-sm text-gray-400 mt-3">Mission</p>
+
+                <h3
+                className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Where{" "}
+                <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+                  We’re
+                </span>{" "}
+                Headed{" "}
+              </h3>
+
+            <p className="text-gray-300 mt-4">
+              To grow into a trusted creative studio known for quality, innovation, and storytelling.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* CORE VALUES */}
       <section className="w-full py-24">
@@ -224,45 +244,49 @@ export default function AboutPage() {
 
           <div className="text-center">
             <h2
-              className="text-3xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Our Core Values
-            </h2>
+            className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Our{" "}
+            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              Core
+            </span>{" "}
+            Values{" "}
+          </h2>
 
             <p
               className="text-gray-400 mt-6 max-w-2xl mx-auto"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              The principles that guide our creativity, collaboration, and
-              innovation.
+              The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-14">
 
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="border border-[#8A2BE2]/40 rounded-3xl p-8 bg-[#1A1A1A]"
+                transition={{ delay: index * 0.05 }}
+                className="border border-[#8A2BE2]/30 bg-[#111111] rounded-2xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition"
               >
-                <h3
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
+
+                {/* ICON / GIF (same style as Services) */}
+                <Image src={value.icon} alt="" width={70} height={70} />
+
+                {/* TITLE */}
+                <h3 className="text-base lg:text-lg font-semibold">
                   {value.title}
                 </h3>
 
-                <p
-                  className="text-gray-300 mt-4 leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
+                {/* DESC */}
+                <p className="text-sm text-gray-400 mt-2 leading-relaxed">
                   {value.description}
                 </p>
+
               </motion.div>
             ))}
           </div>
@@ -275,18 +299,24 @@ export default function AboutPage() {
 
           <div className="text-center">
             <h2
-              className="text-3xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Our Process
-            </h2>
+            className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Crafting{" "}
+            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              Magic
+            </span>{" "}
+            Through{" "}
+            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+              Innovation
+            </span>
+          </h2>
 
             <p
               className="text-gray-400 mt-6 max-w-2xl mx-auto"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              A streamlined approach that ensures creativity, quality, and
-              successful project delivery.
+              Our process is designed to deliver exceptional results while making your experience smooth and enjoyable.
             </p>
           </div>
 
@@ -299,7 +329,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="border border-[#8A2BE2]/40 rounded-3xl p-6 md:p-10 bg-[#1A1A1A] flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
+                className="border border-[#8A2BE2]/40 rounded-3xl p-6 md:p-10  flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
               >
 
                 <div className="flex items-center gap-6 flex-1">
@@ -343,70 +373,85 @@ export default function AboutPage() {
 
       {/* WHY CHOOSE US */}
       <section className="w-full py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] items-center gap-12 lg:gap-20">
 
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
             <h2
-              className="text-3xl md:text-5xl font-bold"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Why Choose Us
+              Why{" "}
+              <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+                Choose
+              </span>{" "}
+              Us{" "}
             </h2>
 
-            <p
-              className="text-gray-400 mt-6 max-w-2xl mx-auto"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              We combine creativity, strategy, and innovation to deliver
-              impactful experiences.
-            </p>
-          </div>
+            <div className="mt-8 flex flex-col gap-6 max-w-2xl">
 
-          <div className="mt-16 max-w-4xl">
+              <p
+                className="text-gray-300 text-base md:text-lg leading-relaxed"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                At Imagic, we believe great work comes from understanding, creativity, and attention to detail.
+                As a small and growing studio, we stay closely involved in every project, ensuring each idea is carefully crafted and thoughtfully executed.
+              </p>
 
-            <p
-              className="text-gray-300 leading-relaxed text-lg"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              At IMAGIC, we focus on delivering high-quality creative and
-              digital solutions tailored to every client’s unique goals and
-              vision.
-            </p>
+              <p
+                className="text-gray-300 text-base md:text-lg leading-relaxed"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                We do not just deliver visuals; we create work that connects, communicates, and leaves a lasting impression.
+              </p>
 
-            <p
-              className="text-gray-300 leading-relaxed text-lg mt-6"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              From concept development to final delivery, our team ensures every
-              project is executed with creativity, professionalism, and
-              attention to detail.
-            </p>
+              <div className="flex flex-col gap-4 pt-2">
 
-            <div className="mt-10 flex flex-col gap-5">
-
-              {[
-                "Creative and innovative solutions",
-                "Experienced multidisciplinary team",
-                "Client-focused collaboration",
-                "High-quality production standards",
-                "Reliable and timely delivery",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#8A2BE2] mt-2" />
-
-                  <p
-                    className="text-gray-300"
-                    style={{ fontFamily: "var(--font-body)" }}
+                {[
+                  "Personal & collaborative approach - we work closely with you at every step",
+                  "Creative + practical thinking - ideas that look good and work well",
+                  "Attention to detail - every element is carefully refined",
+                  "Focused on quality - we prioritize meaningful results over quantity",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 text-left"
                   >
-                    {item}
-                  </p>
-                </div>
-              ))}
+                    <div className="mt-2.5 h-2.5 w-2.5 flex-none rounded-full bg-[#8A2BE2]" />
+
+                    <p
+                      className="text-gray-300 leading-relaxed"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* MASCOT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center lg:justify-end"
+          >
+            <Image
+              src="/mascot 4.png"
+              alt="Mascot"
+              width={420}
+              height={420}
+              className="h-auto w-[240px] sm:w-[300px] lg:w-[420px]"
+            />
+          </motion.div>
         </div>
       </section>
 

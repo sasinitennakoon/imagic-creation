@@ -80,7 +80,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl md:text-5xl font-bold"
+            className="text-3xl sm:text-3xl md:text-5xl font-bold"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Our{" "}

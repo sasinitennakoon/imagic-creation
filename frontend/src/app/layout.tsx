@@ -5,6 +5,8 @@ import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/accessibility/AccessibilityWidget";
 import { A11yProvider } from "@/components/accessibility/A11yProvider";
 
+import SplashProvider from "@/components/SplashProvider";
+
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -33,15 +35,16 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" as="image" href="/mascot.png" />
         <link rel="preload" as="image" href="/imagic logo.png" />
       </head>
 
       <body className="min-h-full flex flex-col bg-[#0F0F0F] text-white">
         <A11yProvider>
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
+          <SplashProvider>
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+          </SplashProvider>
 
           <CookieConsent />
           <AccessibilityWidget />

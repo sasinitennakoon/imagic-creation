@@ -46,7 +46,7 @@ export default function CTA() {
 
               {/* PRIMARY BUTTON */}
               <a
-                href="mailto:hello@imagic.com"
+                href="mailto:imagiccreations@outlook.com"
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#8A2BE2] font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
                 Get Started Today

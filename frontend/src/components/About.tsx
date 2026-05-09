@@ -38,12 +38,12 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex-1 text-left"
+          className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
         >
 
           {/* HEADING */}
           <h2
-            className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight"
+            className="text-3xl sm:text-3xl md:text-5xl font-bold leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Crafting{" "}
@@ -58,7 +58,7 @@ export default function About() {
 
           {/* PARAGRAPHS */}
           <p
-            className="text-gray-300 mt-4 md:mt-6 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
+            className="text-gray-300 mt-4 md:mt-6 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
             At IMAGIC, we bring imagination to life through creativity and technology. As a
@@ -66,7 +66,7 @@ export default function About() {
             live productions, social media content, and digital experiences that connect with your audience.
           </p>
           <p
-            className="text-gray-300 mt-3 md:mt-6 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
+            className="text-gray-300 mt-3 md:mt-6 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Our team of passionate creators blends artistic vision with technical precision to deliver work that stands out.
