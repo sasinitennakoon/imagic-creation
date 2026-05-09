@@ -52,7 +52,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "We frame the world's most fleeting moments with intention, craft, and a distinct visual language that speaks before words do.",
     breadcrumb: "Photography",
-    mascot: "/mascots/photo-mascot11.png",
+    mascot: "/mascots/photo mascot.png",
     whatWeDoImage: "/services/detail/photo-what.jpg",
     whatWeDoText:
       "Our photography team blends technical mastery with artistic intuition to produce imagery that resonates. From boardroom headshots to large-scale product campaigns, every shot is deliberately composed to serve your brand's unique story. We don't just point a camera — we craft a visual narrative that leaves a lasting impression on your audience.",
@@ -141,7 +141,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "Cinematic storytelling engineered for brands that refuse to be invisible in a scroll-driven world.",
     breadcrumb: "Video Production",
-    mascot: "/mascots/video-mascot.png",
+    mascot: "/mascots/new video mascot.png",
     whatWeDoImage: "/services/detail/video-what.jpg",
     whatWeDoText:
       "From concept to colour grade, we handle every frame of your video production. Our end-to-end service covers script development, location scouting, professional filming, and post-production finishing — delivering broadcast-quality content that drives real engagement whether it lives on YouTube, LinkedIn, or a stadium screen.",
@@ -230,7 +230,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "Your live moment, broadcast with zero compromise — from multi-camera rigs to real-time direction.",
     breadcrumb: "Live Production",
-    mascot: "/mascots/live-mascot.png",
+    mascot: "/mascots/live mascot.png",
     whatWeDoImage: "/services/detail/live-what.jpg",
     whatWeDoText:
       "Live production is high-stakes. One dropped frame or a missed cut can break the experience for thousands of viewers. Our crew specialises in real-time multi-camera direction, online streaming infrastructure, and on-site technical production that keeps your event looking polished from the first second to the last.",
@@ -319,7 +319,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "Visual identities and print-ready assets that give your brand an unmistakable presence at every touchpoint.",
     breadcrumb: "Graphic Design",
-    mascot: "/mascots/design-mascot.png",
+    mascot: "/mascots/graphic mascot.png",
     whatWeDoImage: "/services/detail/design-what.jpg",
     whatWeDoText:
       "We design with purpose and personality. Our graphic design work spans complete brand identity systems to individual campaign assets — each piece considered in context and crafted to communicate clearly, attract attention, and reinforce your brand's authority. Whether it's a rebrand or a single-page flyer, we bring the same rigour and creative ambition.",
@@ -402,17 +402,17 @@ const serviceData: Record<string, ServiceDetail> = {
     portfolioTab: "design",
   },
 
-  "ui-ux-design": {
-    slug: "ui-ux-design",
-    title: "UI/UX Design",
+  "web-design": {
+    slug: "web-design",
+    title: "Web Design",
     subtext:
       "Digital experiences engineered around real users — beautiful, intuitive, and conversion-optimised from the first interaction.",
-    breadcrumb: "UI/UX Design",
-    mascot: "/mascots/uiux-mascot.png",
-    whatWeDoImage: "/services/detail/uiux-what.jpg",
+    breadcrumb: "Web Design",
+    mascot: "/mascots/design mascot.png",
+    whatWeDoImage: "/services/detail/web-what.jpg",
     whatWeDoText:
       "Great products start with deep user understanding. Our UX process uncovers friction points, maps ideal journeys, and validates solutions through rapid prototyping — long before a single line of code is written. The result is interfaces that users love and that businesses can build with confidence, because every decision is evidence-backed.",
-    offeringsImage: "/services/detail/uiux-offerings.jpg",
+    offeringsImage: "/services/detail/web-offerings.jpg",
     offerings: [
       {
         title: "App Design",
@@ -497,7 +497,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "Fast, scalable, and meticulously engineered websites and applications that perform as beautifully as they look.",
     breadcrumb: "Web Development",
-    mascot: "/mascots/web-mascot.png",
+    mascot: "/mascots/dev mascot.png",
     whatWeDoImage: "/services/detail/web-what.jpg",
     whatWeDoText:
       "We build web experiences on modern stacks — Next.js, React, Node.js — with performance, security, and maintainability at the core. Whether you need a marketing site, a complex SaaS platform, or a custom e-commerce solution, our team architects, builds, and deploys software that scales with your business without accumulating technical debt.",
@@ -586,7 +586,7 @@ const serviceData: Record<string, ServiceDetail> = {
     subtext:
       "Where raw footage becomes compelling narrative — refined in every cut, grade, and frame.",
     breadcrumb: "Editing",
-    mascot: "/mascots/edit-mascot.png",
+    mascot: "/mascots/new editing mascot.png",
     whatWeDoImage: "/services/detail/edit-what.jpg",
     whatWeDoText:
       "Editing is where the real storytelling happens. Our post-production team works with your raw footage to build a rhythm, emotional arc, and visual language that transforms a collection of clips into a polished piece of content. We handle everything from assembly cut to colour-graded master, with sound design that makes your audience lean in.",
