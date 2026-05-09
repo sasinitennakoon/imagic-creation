@@ -4,7 +4,12 @@ const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://imagic-creation.vercel.app/'], // replace with your actual Vercel URL
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
