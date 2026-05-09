@@ -27,13 +27,13 @@ async function getProjects(): Promise<ProjectsResponse> {
     }
 
 const categoryColors: Record<string, string> = {
-  "web development": "bg-blue-500/20 text-white",
-  "web design": "bg-purple-500/20 text-white",
-  "video production": "bg-pink-500/20 text-white",
-  photography: "bg-yellow-500/20 text-white",
-  editing: "bg-green-500/20 text-white",
-  "graphic design": "bg-orange-500/20 text-white",
-  "live production": "bg-red-500/20 text-white",
+  "web development": "bg-blue-500/80 text-white",
+  "web design": "bg-purple-500/80 text-white",
+  "video production": "bg-pink-500/80 text-white",
+  photography: "bg-yellow-500/80 text-white",
+  editing: "bg-green-500/80 text-white",
+  "graphic design": "bg-orange-500/80 text-white",
+  "live production": "bg-red-500/80 text-white",
 };
 
 const filters = [
