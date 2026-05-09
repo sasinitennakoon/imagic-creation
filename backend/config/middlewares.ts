@@ -7,7 +7,12 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://imagic-creation.vercel.app/'], // replace with your actual Vercel URL
+      origin: [
+        'https://imagic-creation.vercel.app',  // ✅ no trailing slash
+        'http://localhost:3000',                // ✅ keep local dev working
+      ],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     },
   },
   'strapi::poweredBy',
