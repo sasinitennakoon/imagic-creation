@@ -1,4 +1,22 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, Inter } from "next/font/google";
+
+import CookieConsent from "@/components/CookieConsent";
+import AccessibilityWidget from "@/components/accessibility/AccessibilityWidget";
+import { A11yProvider } from "@/components/accessibility/A11yProvider";
+import SplashProvider from "@/components/SplashProvider";
+
+import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.imagiccreation.lk"),
@@ -7,52 +25,31 @@ export const metadata: Metadata = {
     google: "iavLYZTdvTH2o5w7wcxG4vOQHzsp4RmV-4KTqqwz-3E",
   },
 
-
   title: {
     default: "Imagic Creation | Creative Production House",
     template: "%s | Imagic Creation",
   },
 
-  description:
-    "Imagic Creation is a Sri Lankan creative production house specializing in videography, photography, live production, editing, graphic design, UI/UX design, and web development.",
-
-  keywords: [
-    "Imagic",
-    "imagic",
-    "Imagic Creation",
-    "Production House Sri Lanka",
-    "Videography",
-    "Photography",
-    "Video Production",
-    "UI UX Design",
-    "Web Development",
-    "Graphic Design",
-    "Creative Agency",
-    "web design"
-  ],
-
-  authors: [{ name: "Imagic Creation" }],
-
-  creator: "Imagic Creation",
-
-  openGraph: {
-    title: "Imagic Creation | Creative Production House",
-    description:
-      "Creative production house specializing in videography, photography, live production, editing, UI/UX design, graphic design, and web development.",
-    url: "https://www.imagiccreation.lk",
-    siteName: "Imagic Creation",
-    locale: "en_US",
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Imagic Creation",
-    description:
-      "Creative production house specializing in media production and digital experiences.",
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-  },
+  description: "Creative Production House in Sri Lanka",
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <body>
+        <A11yProvider>
+          <SplashProvider>
+            <main>{children}</main>
+          </SplashProvider>
+
+          <CookieConsent />
+          <AccessibilityWidget />
+        </A11yProvider>
+      </body>
+    </html>
+  );
+}
