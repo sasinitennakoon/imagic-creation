@@ -30,7 +30,58 @@ export const metadata: Metadata = {
     template: "%s | Imagic Creation",
   },
 
-  description: "Creative Production House in Sri Lanka",
+  description: "Imagic Creation is a creative production house in Sri Lanka specializing in videography, photography, live production, editing, UI/UX design, graphic design, and web development.",
+
+  applicationName: "Imagic Creation",
+
+  keywords: [
+    "imagic",
+    "Imagic",
+    "imagic creation",
+    "Imagic Creation",
+    "Sri Lanka production house",
+    "videography Sri Lanka",
+    "photography Sri Lanka",
+    "UI UX design Sri Lanka",
+    "web development Sri Lanka",
+    "creative agency Sri Lanka",
+  ],
+
+  authors: [{ name: "Imagic Creation" }],
+  creator: "Imagic Creation",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://www.imagiccreation.lk",
+    title: "Imagic Creation",
+    description:
+      "Creative production house in Sri Lanka for video, photography, design, and web development.",
+    siteName: "Imagic Creation",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Imagic Creation",
+    description:
+      "Creative production house in Sri Lanka",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
+
 };
 
 export default function RootLayout({
