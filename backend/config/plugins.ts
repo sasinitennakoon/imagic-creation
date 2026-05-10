@@ -11,9 +11,9 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
     config: {
       provider: "cloudinary",
       providerOptions: {
-        cloud_name: env("dwz8zdbi3"),
-        api_key: env("665297154625536"),
-        api_secret: env("GRRvt4O11woh_y4hkd3dLpAUjaQ"),
+        cloud_name: process.env.CLOUDINARY_NAME,
+        api_key: process.env.CLOUDINARY_KEY,
+        api_secret: process.env.CLOUDINARY_SECRET,
       },
       actionOptions: {
         upload: {},
