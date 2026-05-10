@@ -8,7 +8,8 @@ const config: Core.Config.Middlewares = [
     name: 'strapi::cors',
     config: {
       origin: [
-        'https://imagic-creation.vercel.app',  // ✅ no trailing slash
+        "https://imagiccreation.lk",
+        "https://www.imagiccreation.lk",  // ✅ no trailing slash
         'http://localhost:3000',                // ✅ keep local dev working
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
