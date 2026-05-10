@@ -129,7 +129,7 @@ function renderBlock(block: any) {
         <figure className="mt-8">
           <div className="overflow-hidden rounded-xl bg-zinc-900">
             <img
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${block.image.url}`}
+              src={block.image.url.startsWith("http") ? block.image.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${block.image.url}`}
               alt={block.image.alternativeText ?? ""}
               className="w-full object-cover"
             />
@@ -172,7 +172,7 @@ function renderBlock(block: any) {
                 className="overflow-hidden rounded-xl bg-zinc-900 aspect-video"
               >
                 <img
-                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
+                  src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
                   alt={img.alternativeText ?? ""}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -248,7 +248,7 @@ export default async function ProjectPage({
   /* ── Field mappings matching exact Strapi schema ── */
   const clientName: string | null = attrs.client ?? null;          // field: client (Text)
   const clientLogoUrl: string | null = attrs.clientLogo?.url       // field: clientLogo (Media)
-    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${attrs.clientLogo.url}`
+    ? attrs.clientLogo.url.startsWith("http") ? attrs.clientLogo.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${attrs.clientLogo.url}`
     : null;
   const formattedDate = formatDate(attrs.date);                    // field: date (Date)
   const tags = parseTags(attrs.tags);                              // field: tags (Text)
@@ -380,7 +380,7 @@ export default async function ProjectPage({
             style={{ boxShadow: "0 0 80px rgba(138,43,226,0.12)" }}
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${attrs.coverImage.url}`}
+              src={attrs.coverImage.url.startsWith("http") ? attrs.coverImage.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${attrs.coverImage.url}`}
               alt={attrs.coverImage.alternativeText ?? attrs.title}
               className="w-full h-full object-cover"
             />
@@ -439,7 +439,7 @@ export default async function ProjectPage({
                     className="overflow-hidden rounded-xl bg-zinc-900 aspect-video group"
                   >
                     <img
-                      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
+                      src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
                       alt={img.alternativeText ?? ""}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

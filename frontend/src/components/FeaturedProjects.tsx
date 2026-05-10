@@ -86,7 +86,7 @@ export default function FeaturedProjects() {
 
                   {img && (
                     <img
-                    src={`http://localhost:1337${img}`}
+                    src={img.startsWith("http") ? img : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img}`}
                     alt={p.title}
                     className="w-full h-full object-cover"
                     />

@@ -175,7 +175,7 @@ function ProjectsContent() {
                   <div className="relative overflow-hidden h-[240px]">
                     {img && (
                       <img
-                        src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${img}`}
+                        src={img.startsWith("http") ? img : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img}`}
                         alt={p.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                       />
