@@ -57,7 +57,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/photography.jpg",
     whatWeDoText:
       "Our photography team blends technical mastery with artistic intuition to produce imagery that resonates. From boardroom headshots to large-scale product campaigns, every shot is deliberately composed to serve your brand's unique story. We don't just point a camera — we craft a visual narrative that leaves a lasting impression on your audience.",
-    offeringsImage: "/services/detail/photo-offerings.jpg",
+    offeringsImage: "/photo.png",
     offerings: [
       {
         title: "Corporate Photography",
@@ -146,7 +146,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/video production.jpg",
     whatWeDoText:
       "From concept to colour grade, we handle every frame of your video production. Our end-to-end service covers script development, location scouting, professional filming, and post-production finishing — delivering broadcast-quality content that drives real engagement whether it lives on YouTube, LinkedIn, or a stadium screen.",
-    offeringsImage: "/services/detail/video-offerings.jpg",
+    offeringsImage: "/video.png",
     offerings: [
       {
         title: "Commercial Videos",
@@ -235,7 +235,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/live production.jpg",
     whatWeDoText:
       "Live production is high-stakes. One dropped frame or a missed cut can break the experience for thousands of viewers. Our crew specialises in real-time multi-camera direction, online streaming infrastructure, and on-site technical production that keeps your event looking polished from the first second to the last.",
-    offeringsImage: "/services/detail/live-offerings.jpg",
+    offeringsImage: "/live.png",
     offerings: [
       {
         title: "Live Streaming",
@@ -324,7 +324,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/graphic design.jpg",
     whatWeDoText:
       "We design with purpose and personality. Our graphic design work spans complete brand identity systems to individual campaign assets — each piece considered in context and crafted to communicate clearly, attract attention, and reinforce your brand's authority. Whether it's a rebrand or a single-page flyer, we bring the same rigour and creative ambition.",
-    offeringsImage: "/services/detail/design-offerings.jpg",
+    offeringsImage: "/graphic.png",
     offerings: [
       {
         title: "Brand Identity",
@@ -413,7 +413,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/web design.jpg",
     whatWeDoText:
       "Great products start with deep user understanding. Our UX process uncovers friction points, maps ideal journeys, and validates solutions through rapid prototyping — long before a single line of code is written. The result is interfaces that users love and that businesses can build with confidence, because every decision is evidence-backed.",
-    offeringsImage: "/services/detail/web-offerings.jpg",
+    offeringsImage: "/web.png",
     offerings: [
       {
         title: "App Design",
@@ -502,7 +502,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/web development.jpg",
     whatWeDoText:
       "We build web experiences on modern stacks — Next.js, React, Node.js — with performance, security, and maintainability at the core. Whether you need a marketing site, a complex SaaS platform, or a custom e-commerce solution, our team architects, builds, and deploys software that scales with your business without accumulating technical debt.",
-    offeringsImage: "/services/detail/web-offerings.jpg",
+    offeringsImage: "/dev.png",
     offerings: [
       {
         title: "Frontend Development",
@@ -591,7 +591,7 @@ const serviceData: Record<string, ServiceDetail> = {
     whatWeDoImage: "/services/editing.jpg",
     whatWeDoText:
       "Editing is where the real storytelling happens. Our post-production team works with your raw footage to build a rhythm, emotional arc, and visual language that transforms a collection of clips into a polished piece of content. We handle everything from assembly cut to colour-graded master, with sound design that makes your audience lean in.",
-    offeringsImage: "/services/detail/edit-offerings.jpg",
+    offeringsImage: "/edit.png",
     offerings: [
       {
         title: "Video Editing",
@@ -1086,7 +1086,7 @@ export default function ServiceDetailPage() {
 
             {/* Image */}
             <div className="w-full md:flex-1">
-              <div className="rounded-2xl overflow-hidden border border-[#8A2BE2]/20 sticky top-24">
+              <div className=" overflow-hidden   sticky top-24">
                 <Image
                   src={service.offeringsImage}
                   alt="Our services"
