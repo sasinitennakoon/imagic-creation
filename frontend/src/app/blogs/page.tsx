@@ -112,7 +112,7 @@ export default function BlogsPage() {
                       <div className="relative h-[240px] overflow-hidden">
                         {image ? (
                           <Image
-                            src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
+                            src={image.startsWith("http") ? image : `${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
                             alt={blog.title}
                             fill
                             unoptimized
