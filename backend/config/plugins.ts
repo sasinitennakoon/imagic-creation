@@ -23,4 +23,10 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   },
 });
 
+console.log('=== CLOUDINARY ENV CHECK ===');
+console.log('CLOUDINARY_NAME:', process.env.CLOUDINARY_NAME);
+console.log('CLOUDINARY_KEY:', process.env.CLOUDINARY_KEY);
+console.log('CLOUDINARY_SECRET exists:', !!process.env.CLOUDINARY_SECRET);
+console.log('============================');
+
 export default config;
