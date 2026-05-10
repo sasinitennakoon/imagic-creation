@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.imagiccreation.lk"),
 
+  verification: {
+    google: "iavLYZTdvTH2o5w7wcxG4vOQHzsp4RmV-4KTqqwz-3E",
+  },
+
+
   title: {
     default: "Imagic Creation | Creative Production House",
     template: "%s | Imagic Creation",
