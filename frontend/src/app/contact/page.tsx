@@ -358,7 +358,7 @@ export default function ContactPage() {
 
             <div className="space-y-6 sm:space-y-8">
               {[
-                { icon: <FaEnvelope />, label: "Email", value: "imagiccreation@outlook.com" },
+                { icon: <FaEnvelope />, label: "Email", value: "imagiccreations@outlook.com" },
                 { icon: <FaPhoneAlt />, label: "Phone Number", value: "+94 70 670 0770" },
                 { icon: <FaMapMarkerAlt />, label: "Location", value: "13, 2nd Lane, Nawala, Koswatte" },
               ].map(({ icon, label, value }) => (

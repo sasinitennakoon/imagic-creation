@@ -44,10 +44,10 @@ export default function Footer() {
               <p>13,2nd Lane,Nawala,Koswatta</p>
 
               <a
-                href="tel:+94771234567"
+                href="tel:+94706700770"
                 className="block hover:text-white transition"
               >
-                +94 77 123 4567
+                +94 70 670 0770
               </a>
 
               <a
@@ -140,8 +140,8 @@ export default function Footer() {
                 Graphic Design
               </Link>
 
-              <Link href="/services/ui-ux-design" className="hover:text-white transition">
-                UI/UX Design
+              <Link href="/services/web-design" className="hover:text-white transition">
+                Web Design
               </Link>
 
               <Link href="/services/web-development" className="hover:text-white transition">
