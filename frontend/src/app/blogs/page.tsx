@@ -1,48 +1,66 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CTA from "@/components/Cta";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogs } from "@/lib/api";
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 function extractText(blocks: any[]): string {
   if (!blocks) return "";
-
   return blocks
     .map((block) => {
       if (!block.children) return "";
-
-      return block.children
-        .map((child: any) => child.text || "")
-        .join("");
+      return block.children.map((child: any) => child.text || "").join("");
     })
     .join(" ");
 }
 
-export default async function BlogsPage() {
-  const res = await getBlogs();
+export default function BlogsPage() {
+  const [blogs, setBlogs] = useState<any[]>([]);
 
-  const blogs = res.data || [];
+  useEffect(() => {
+    async function load() {
+      const res = await getBlogs();
+      setBlogs(res.data || []);
+    }
+    load();
+  }, []);
 
   return (
-    <main className="bg-[#0F0F0F] text-white min-h-screen">
+    <main className="bg-[#0F0F0F] text-white pt-8 md:pt-20">
       <Navbar />
 
       {/* HERO */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className="max-w-7xl mx-auto px-5 md:px-16 text-center">
 
-          <h1 className="text-4xl md:text-6xl font-bold">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: smoothEase }}
+            className="text-4xl md:text-6xl font-bold"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             Our{" "}
             <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
               Blogs
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: smoothEase }}
+            className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base"
+          >
             Insights, creative stories, production tips, and design inspiration
             from the Imagic team.
-          </p>
+          </motion.p>
 
         </div>
       </section>
@@ -52,87 +70,92 @@ export default async function BlogsPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-16">
 
           {blogs.length === 0 ? (
-            <div className="text-center text-gray-400">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: smoothEase }}
+              className="text-center text-gray-400"
+            >
               No blogs available.
-            </div>
+            </motion.div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-              {blogs.map((blog: any) => {
-                // COVER IMAGE
+              {blogs.map((blog: any, index: number) => {
                 const image =
                   blog.coverImage?.url ||
                   blog.coverImage?.formats?.medium?.url ||
                   null;
 
-                // EXCERPT
                 const excerpt =
                   blog.excerpt ||
                   extractText(blog.content).slice(0, 120) ||
                   "Read more about this article.";
 
                 return (
-                  <Link
+                  <motion.div
                     key={blog.id}
-                    href={`/blogs/${blog.slug}`}
-                    className="group border border-white/10 rounded-2xl overflow-hidden bg-[#1A1A1A] hover:border-[#8A2BE2]/60 transition duration-300"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{
+                      duration: 0.6,
+                      delay: (index % 3) * 0.08,
+                      ease: smoothEase,
+                    }}
+                    whileHover={{ scale: 1.02 }}
                   >
-
-                    {/* IMAGE */}
-                    <div className="relative w-full h-[220px] overflow-hidden">
-                    {image ? (
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
-                        alt={blog.title}
-                        fill
-                        unoptimized
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-[#2A2A2A]" />
-                    )}
-
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="p-6">
-
-                      {/* DATE */}
-                      <p className="text-xs text-[#8A2BE2] mb-3">
-                        {blog.publishedAt
-                          ? new Date(blog.publishedAt).toLocaleDateString()
-                          : "Recently Published"}
-                      </p>
-
-                      {/* TITLE */}
-                      <h2 className="text-xl font-semibold line-clamp-2 group-hover:text-[#C51BE2] transition">
-                        {blog.title}
-                      </h2>
-
-                      {/* EXCERPT */}
-                      <p className="text-gray-400 text-sm mt-4 leading-relaxed line-clamp-3">
-                        {excerpt}
-                      </p>
-
-                      {/* BUTTON */}
-                      <div className="mt-6 inline-flex items-center text-sm text-[#8A2BE2]">
-                        Read More →
+                    <Link
+                      href={`/blogs/${blog.slug}`}
+                      className="group relative rounded-2xl overflow-hidden bg-[#151515] border border-white/10 hover:border-[#8A2BE2]/60 transition-colors duration-500 flex flex-col h-full"
+                    >
+                      {/* IMAGE */}
+                      <div className="relative h-[240px] overflow-hidden">
+                        {image ? (
+                          <Image
+                            src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image}`}
+                            alt={blog.title}
+                            fill
+                            unoptimized
+                            className="object-cover group-hover:scale-110 transition duration-700"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-[#2A2A2A]" />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                        {blog.category && (
+                          <div className="absolute top-4 left-4 text-xs px-3 py-1 rounded-full bg-[#C51BE2] backdrop-blur-md border border-white/10 text-white">
+                            {blog.category}
+                          </div>
+                        )}
                       </div>
 
-                    </div>
-
-                  </Link>
+                      {/* CONTENT */}
+                      <div className="p-6">
+                        <h2 className="text-xl font-semibold leading-snug group-hover:text-[#C51BE2] transition">
+                          {blog.title}
+                        </h2>
+                        <p className="text-gray-400 text-sm mt-3 leading-relaxed line-clamp-3">
+                          {excerpt}
+                        </p>
+                        <div className="mt-6 flex items-center justify-between">
+                          <span className="text-sm text-white font-medium group-hover:tracking-wide transition-all">
+                            Read More
+                          </span>
+                          <span className="text-white text-lg group-hover:translate-x-1 transition-transform duration-300">
+                            →
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
                 );
               })}
-
             </div>
           )}
 
         </div>
       </section>
 
-      <CTA />
       <Footer />
     </main>
   );

@@ -6,8 +6,8 @@ import CTA from "@/components/Cta";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const VisionIcon = "/icons/vision.png";
-const MissionIcon = "/icons/mission.png";
+const VisionIcon = "/vision icon.png";
+const MissionIcon = "/mission icon.png";
 
 const coreValues = [
   {
@@ -69,7 +69,7 @@ const processes = [
 
 export default function AboutPage() {
   return (
-    <main className="w-full bg-[#0F0F0F] text-white overflow-hidden">
+    <main className="w-full bg-[#0F0F0F] text-white overflow-hidden ">
         <Navbar />
 
       {/* HERO SECTION */}
@@ -179,7 +179,7 @@ Our team is made up of passionate creators who believe that every project is mor
             className="flex-1"
           >
             <Image
-              src="/about/about-image.jpg"
+              src="/who we are.jpg"
               alt="Who we are"
               width={700}
               height={500}
@@ -337,8 +337,8 @@ Our team is made up of passionate creators who believe that every project is mor
                   <Image
                     src={process.gif}
                     alt={process.title}
-                    width={120}
-                    height={120}
+                    width={50}
+                    height={50}
                     className="rounded-2xl object-cover"
                   />
 

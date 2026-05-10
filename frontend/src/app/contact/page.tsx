@@ -153,7 +153,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="w-full min-h-screen bg-[#0F0F0F] text-white pt-24">
+    <section className="w-full min-h-screen bg-[#0F0F0F] text-white pt-32">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
 
@@ -163,14 +163,19 @@ export default function ContactPage() {
             className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Let&apos;s{" "}
-            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
-              Create
-            </span>{" "}
-            Something{" "}
-            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
-              Great
-            </span>
+            <div>
+              Let&apos;s{" "}
+              <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+                Create
+              </span>
+            </div>
+
+            <div>
+              Something{" "}
+              <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+                Great
+              </span>
+            </div>
           </h1>
           <p className="text-gray-400 mt-5 max-w-2xl text-sm md:text-base leading-relaxed">
             Have a project in mind? Let&apos;s discuss your ideas and turn them into

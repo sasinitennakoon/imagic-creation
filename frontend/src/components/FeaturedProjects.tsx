@@ -30,16 +30,18 @@ export default function FeaturedProjects() {
 };
 
   return (
-    <section className="w-full bg-[#0F0F0F] text-white py-24">
+    <section className="w-full bg-[#0F0F0F] text-white py-12 md:py-24">
 
       <div className="max-w-7xl mx-auto px-6 md:px-16">
 
         {/* HEADER */}
         <div className="flex flex-col items-center text-center">
 
-          <motion.h2 initial={{ opacity: 0, y: 40 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-3xl md:text-5xl font-bold text-center" 
             style={{ fontFamily: "var(--font-heading)" }} >
             Our{" "}
@@ -67,11 +69,16 @@ export default function FeaturedProjects() {
             return (
               <motion.div
                 key={p.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="border border-[#8A2BE2]/30 rounded-xl overflow-hidden bg-[#1E1E1E] hover:scale-[1.02] transition"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ scale: 1.02 }}  // 👈 moved here
+                className="border border-[#8A2BE2]/30 rounded-xl overflow-hidden bg-[#1E1E1E]"  // 👈 removed hover:scale-[1.02] and transition
               >
 
                 {/* IMAGE */}

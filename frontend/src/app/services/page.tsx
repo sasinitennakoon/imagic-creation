@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type Service = {
   slug: string;
@@ -76,7 +77,6 @@ const services: Service[] = [
       "E-commerce Solutions",
       "CMS Integration",
     ],
-    
   },
   {
     slug: "editing",
@@ -90,9 +90,9 @@ const services: Service[] = [
       "Sound Editing",
       "Post Production",
     ],
-     reverse: true,
+    reverse: true,
   },
-    {
+  {
     slug: "graphic-design",
     title: "Graphic Design",
     description:
@@ -104,19 +104,24 @@ const services: Service[] = [
       "Social Media Designs",
       "Packaging Design",
     ],
-   
   },
 ];
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 export default function ServicesPage() {
   return (
-    <main className="bg-[#0F0F0F] text-white">
+    <main className="bg-[#0F0F0F] text-white pt-10 md:pt-20">
       <Navbar />
 
       {/* HERO */}
       <section className="w-full py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-5 md:px-16 text-center">
-          <h1
+
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: smoothEase }}
             className="text-3xl sm:text-4xl md:text-6xl font-bold"
             style={{ fontFamily: "var(--font-heading)" }}
           >
@@ -124,14 +129,24 @@ export default function ServicesPage() {
             <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
               Services
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-gray-400 mt-5 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: smoothEase }}
+            className="text-gray-400 mt-5 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed"
+          >
             We provide end-to-end creative solutions that bring ideas to life
             through design, technology, and storytelling.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 md:mt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.28, ease: smoothEase }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-8 md:mt-10"
+          >
             <Link
               href="/projects"
               className="px-6 py-3 rounded-full text-sm md:text-base bg-[#8A2BE2] hover:opacity-90 transition"
@@ -144,7 +159,8 @@ export default function ServicesPage() {
             >
               Contact Us
             </Link>
-          </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -158,7 +174,13 @@ export default function ServicesPage() {
             }`}
           >
             {/* IMAGE */}
-            <div className="w-full md:flex-1">
+            <motion.div
+              className="w-full md:flex-1"
+              initial={{ opacity: 0, x: service.reverse ? 60 : -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: smoothEase }}
+            >
               <div className="rounded-2xl overflow-hidden border border-[#8A2BE2]/30">
                 <Image
                   src={service.image}
@@ -168,10 +190,16 @@ export default function ServicesPage() {
                   className="w-full h-auto object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* CONTENT */}
-            <div className="w-full md:flex-1">
+            <motion.div
+              className="w-full md:flex-1"
+              initial={{ opacity: 0, x: service.reverse ? -60 : 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: smoothEase }}
+            >
               <h2
                 className="text-2xl sm:text-3xl md:text-4xl font-bold"
                 style={{ fontFamily: "var(--font-heading)" }}
@@ -185,20 +213,39 @@ export default function ServicesPage() {
 
               <div className="mt-5 space-y-3">
                 {service.points.map((p, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                  <motion.div
+                    key={idx}
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.5,
+                      delay: idx * 0.08,
+                      ease: smoothEase,
+                    }}
+                  >
                     <span className="text-[#8A2BE2] mt-0.5 flex-shrink-0">✔</span>
                     <p className="text-gray-300 text-sm sm:text-base">{p}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              <Link
-                href={`/services/${service.slug}`}
-                className="inline-block mt-7 px-6 py-2.5 text-sm md:text-base rounded-full bg-[#8A2BE2] hover:opacity-90 transition"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: smoothEase }}
               >
-                Learn More
-              </Link>
-            </div>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="inline-block mt-7 px-6 py-2.5 text-sm md:text-base rounded-full bg-[#8A2BE2] hover:opacity-90 transition"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
+            </motion.div>
+
           </div>
         ))}
       </section>

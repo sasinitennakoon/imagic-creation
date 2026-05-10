@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HandPointing, CheckCircle, ArrowRight } from "@phosphor-icons/react";
+import CTA from "@/components/Cta";
 
 // ─────────────────────────────────────────────
 // Types
@@ -81,25 +82,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/discovery.gif",
+        gif: "/gifs/search.gif",
         title: "Discovery Call",
         description:
           "We align on your goals, brand tone, location preferences, and shot list before a single shutter fires.",
       },
       {
-        gif: "/gifs/planning.gif",
+        gif: "/gifs/To Do.gif",
         title: "Creative Planning",
         description:
           "Mood boards, lighting diagrams, and a detailed schedule are prepared so shoot day runs flawlessly.",
       },
       {
-        gif: "/gifs/shoot.gif",
+        gif: "/gifs/photography.gif",
         title: "The Shoot",
         description:
           "Our team arrives fully equipped, directing talent and capturing every angle with precision.",
       },
       {
-        gif: "/gifs/editing.gif",
+        gif: "/gifs/edit.gif",
         title: "Post-Processing",
         description:
           "Colour correction, retouching, and export in every format you need — delivered within 5 business days.",
@@ -132,7 +133,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "Our photographers are also comfortable directors, putting even camera-shy subjects at ease.",
       },
     ],
-    portfolioTab: "photography",
+    portfolioTab: "Photography",
   },
 
   "video-production": {
@@ -170,25 +171,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/script.gif",
+        gif: "/gifs/note.gif",
         title: "Script & Concept",
         description:
           "We develop or refine your script, storyboard every scene, and lock a creative direction before cameras roll.",
       },
       {
-        gif: "/gifs/preproduction.gif",
+        gif: "/gifs/check board.gif",
         title: "Pre-Production",
         description:
           "Location permits, talent casting, shot lists, and equipment prep are handled in meticulous detail.",
       },
       {
-        gif: "/gifs/filming.gif",
+        gif: "/gifs/calendar.gif",
         title: "Production Day",
         description:
           "A full crew — director, DP, sound recordist, and gaffer — ensures every scene is captured perfectly.",
       },
       {
-        gif: "/gifs/postproduction.gif",
+        gif: "/gifs/edit.gif",
         title: "Post-Production",
         description:
           "Editing, colour grading, motion graphics, and sound design are applied to create the final cut.",
@@ -221,7 +222,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "Every creative decision is made to serve the story and your audience — not just look flashy.",
       },
     ],
-    portfolioTab: "video",
+    portfolioTab: "Video Production",
   },
 
   "live-production": {
@@ -259,25 +260,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/siterecon.gif",
+        gif: "/gifs/location.gif",
         title: "Site Recce",
         description:
           "We visit the venue in advance to plan camera positions, power runs, and network infrastructure.",
       },
       {
-        gif: "/gifs/setup.gif",
+        gif: "/gifs/Setup.gif",
         title: "Setup & Rehearsal",
         description:
           "Full rig is installed the day before, with a complete technical rehearsal to iron out every variable.",
       },
       {
-        gif: "/gifs/liveday.gif",
+        gif: "/gifs/live.gif",
         title: "Live Day",
         description:
           "Our director, operators, and streaming engineer work in sync to deliver a flawless broadcast.",
       },
       {
-        gif: "/gifs/delivery.gif",
+        gif: "/gifs/videography.gif",
         title: "Recordings & VOD",
         description:
           "Uncompressed recordings and edited highlight cuts are delivered within 48 hours of the event.",
@@ -310,7 +311,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "We clean up the recording and package it as an on-demand asset you can publish immediately.",
       },
     ],
-    portfolioTab: "live",
+    portfolioTab: "Live Production",
   },
 
   "graphic-design": {
@@ -348,25 +349,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/brief.gif",
+        gif: "/gifs/To Do.gif",
         title: "Brand Brief",
         description:
           "We dig into your competitors, audience, and values to inform every design decision.",
       },
       {
-        gif: "/gifs/concepts.gif",
+        gif: "/gifs/Project.gif",
         title: "Concept Exploration",
         description:
           "Three distinct creative directions are presented with rationale — you choose the path forward.",
       },
       {
-        gif: "/gifs/refinement.gif",
+        gif: "/gifs/eye.gif",
         title: "Refinement",
         description:
           "Your selected direction is refined across two revision rounds until every detail is perfect.",
       },
       {
-        gif: "/gifs/handoff.gif",
+        gif: "/gifs/Paper Plane.gif",
         title: "Asset Handoff",
         description:
           "Final files delivered in all formats — AI, EPS, PDF, PNG, SVG — ready for any application.",
@@ -399,7 +400,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "From business cards to billboards, we ensure your identity adapts without losing integrity.",
       },
     ],
-    portfolioTab: "design",
+    portfolioTab: "Graphic Design",
   },
 
   "web-design": {
@@ -437,25 +438,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/research.gif",
+        gif: "/gifs/Research.gif",
         title: "User Research",
         description:
           "We interview real users, analyse competitors, and synthesise insights into design principles.",
       },
       {
-        gif: "/gifs/wireframes.gif",
+        gif: "/gifs/ui.gif",
         title: "Wireframing",
         description:
           "Low-fidelity wireframes map every user journey before visual design begins.",
       },
       {
-        gif: "/gifs/prototype.gif",
+        gif: "/gifs/Feedback.gif",
         title: "Prototype & Test",
         description:
           "Interactive prototypes are tested with real users and iterated based on observed behaviour.",
       },
       {
-        gif: "/gifs/devhandoff.gif",
+        gif: "/gifs/Minecraft.gif",
         title: "Dev Handoff",
         description:
           "Annotated Figma files, component libraries, and design tokens ensure zero-loss implementation.",
@@ -488,7 +489,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "Designs account for mobile, tablet, and desktop simultaneously — never retrofitted after the fact.",
       },
     ],
-    portfolioTab: "design",
+    portfolioTab: "Web Design",
   },
 
   "web-development": {
@@ -526,25 +527,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/techaudit.gif",
+        gif: "/gifs/Search.gif",
         title: "Technical Discovery",
         description:
           "We audit your existing stack, define technical requirements, and select the optimal architecture.",
       },
       {
-        gif: "/gifs/devsetup.gif",
+        gif: "/gifs/Setup.gif",
         title: "Project Setup",
         description:
           "Monorepo, CI/CD pipeline, testing suite, and staging environment established on day one.",
       },
       {
-        gif: "/gifs/build.gif",
+        gif: "/gifs/develop.gif",
         title: "Agile Development",
         description:
           "Two-week sprints with demo sessions keep you informed and in control throughout the build.",
       },
       {
-        gif: "/gifs/launch.gif",
+        gif: "/gifs/Paper Plane.gif",
         title: "Launch & Handover",
         description:
           "QA, performance optimisation, and a full technical handover with documentation and training.",
@@ -577,7 +578,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "Server-side rendering, structured data, and semantic HTML give your site a search advantage from launch.",
       },
     ],
-    portfolioTab: "web",
+    portfolioTab: "Web Development",
   },
 
   editing: {
@@ -615,25 +616,25 @@ const serviceData: Record<string, ServiceDetail> = {
     ],
     steps: [
       {
-        gif: "/gifs/ingest.gif",
+        gif: "/gifs/Folder.gif",
         title: "Footage Ingest",
         description:
           "All your media is ingested, organised, and backed up before a single cut is made.",
       },
       {
-        gif: "/gifs/roughcut.gif",
+        gif: "/gifs/cut.gif",
         title: "Assembly & Rough Cut",
         description:
           "We build the narrative structure and present a rough cut for your directional feedback.",
       },
       {
-        gif: "/gifs/finecut.gif",
+        gif: "/gifs/eye.gif",
         title: "Fine Cut & Grade",
         description:
           "Pacing is refined, colour grading is applied, and motion graphics are integrated.",
       },
       {
-        gif: "/gifs/master.gif",
+        gif: "/gifs/Paper Plane.gif",
         title: "Master & Deliver",
         description:
           "Audio is mastered, final QC is completed, and deliverables are exported in your required formats.",
@@ -666,7 +667,7 @@ const serviceData: Record<string, ServiceDetail> = {
           "Deliverables meet the technical specifications of broadcasters, streaming platforms, and cinemas.",
       },
     ],
-    portfolioTab: "video",
+    portfolioTab: "Editing",
   },
 };
 
@@ -675,30 +676,55 @@ const serviceData: Record<string, ServiceDetail> = {
 // ─────────────────────────────────────────────
 type StrapiProject = {
   id: number;
-  attributes: {
-    title: string;
-    slug: string;
-    category: string;
-    thumbnail: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
+  title: string;
+  slug: string;
+  projectType: string;
+  coverImage: {
+    url: string;
+  } | null;
 };
 
-async function fetchRelatedProjects(category: string): Promise<StrapiProject[]> {
+function getStrapiMediaUrl(url?: string | null) {
+  if (!url) return "/placeholder.jpg";
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+
+  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
+  return baseUrl ? `${baseUrl}${url}` : url;
+}
+
+async function fetchRelatedProjects(
+  projectType: string
+): Promise<StrapiProject[]> {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?filters[category][$eq]=${category}&sort=createdAt:desc&pagination[limit]=2&populate=thumbnail`,
-      { cache: "no-store" }
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?filters[projectType][$eq]=${encodeURIComponent(projectType)}&populate=*`,
+      {
+        cache: "no-store",
+      }
     );
+
     if (!res.ok) return [];
+
     const json = await res.json();
-    return json.data ?? [];
-  } catch {
+
+    console.log("STRAPI PROJECTS:", json);
+
+    return (
+      json.data?.map((item: any) => ({
+        id: item.id,
+        title: item.title,
+        slug: item.slug,
+        projectType: item.projectType,
+
+        coverImage: item.coverImage
+          ? {
+              url: item.coverImage.url,
+            }
+          : null,
+      })) || []
+    );
+  } catch (error) {
+    console.error(error);
     return [];
   }
 }
@@ -774,110 +800,244 @@ export default function ServiceDetailPage() {
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative w-full pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-        {/* Ambient glow */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+<section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-16 sm:pb-20 md:pb-28 overflow-hidden">
+
+  {/* Ambient glow */}
+  <div
+    aria-hidden
+    className="
+      pointer-events-none 
+      absolute 
+      -top-40 
+      -left-40 
+      w-[320px] h-[320px]
+      sm:w-[500px] sm:h-[500px]
+      md:w-[700px] md:h-[700px]
+      rounded-full 
+      opacity-20
+    "
+    style={{
+      background:
+        "radial-gradient(circle, #C51BE2 0%, #8A2BE2 50%, transparent 70%)",
+      filter: "blur(90px)",
+    }}
+  />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+
+    <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-8 lg:gap-14">
+
+      {/* ── LEFT CONTENT ───────────────────── */}
+      <div className="w-full md:flex-1 z-10 text-center md:text-left">
+
+        {/* Breadcrumb */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <nav className="flex items-center justify-center md:justify-start gap-2 text-[11px] sm:text-xs text-gray-400 mb-5 whitespace-nowrap min-w-max">
+            
+            <Link
+              href="/"
+              className="hover:text-white transition shrink-0"
+            >
+              Home
+            </Link>
+
+            <span className="shrink-0">/</span>
+
+            <Link
+              href="/services"
+              className="hover:text-white transition shrink-0"
+            >
+              Services
+            </Link>
+
+            <span className="shrink-0">/</span>
+
+            <span className="text-[#C51BE2] truncate max-w-[160px] sm:max-w-xs">
+              {service.breadcrumb}
+            </span>
+          </nav>
+        </div>
+
+        {/* Title */}
+        <h1
+          className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            lg:text-6xl
+            xl:text-7xl
+            font-bold
+            leading-[1.05]
+            tracking-tight
+            max-w-3xl
+            mx-auto
+            md:mx-0
+          "
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          {service.title.split(" ").slice(0, -1).join(" ")}{" "}
+          <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
+            {service.title.split(" ").slice(-1)}
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          className="
+            text-gray-400
+            mt-5
+            text-sm
+            sm:text-base
+            md:text-lg
+            max-w-xl
+            leading-relaxed
+            mx-auto
+            md:mx-0
+          "
+        >
+          {service.subtext}
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 sm:gap-4 mt-8">
+
+          <Link
+            href="/contact"
+            className="
+              w-full sm:w-auto
+              px-6 md:px-7
+              py-3
+              rounded-full
+              text-sm md:text-base
+              bg-gradient-to-r
+              from-[#C51BE2]
+              to-[#8A2BE2]
+              hover:opacity-90
+              transition
+              font-medium
+              text-center
+            "
+          >
+            Get a Quote
+          </Link>
+
+          <Link
+            href="/projects"
+            className="
+              w-full sm:w-auto
+              px-6 md:px-7
+              py-3
+              rounded-full
+              text-sm md:text-base
+              border border-white/15
+              hover:bg-white/10
+              transition
+              text-center
+            "
+          >
+            See Our Work
+          </Link>
+        </div>
+      </div>
+
+      {/* ── RIGHT MASCOT ───────────────────── */}
+      <div className="w-full md:flex-1 flex justify-center md:justify-end z-10">
+
         <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full opacity-20"
-          style={{
-            background:
-              "radial-gradient(circle, #C51BE2 0%, #8A2BE2 50%, transparent 70%)",
-            filter: "blur(80px)",
-          }}
+          className="
+            relative
+
+            w-[220px] h-[220px]
+            xs:w-[260px] xs:h-[260px]
+            sm:w-[320px] sm:h-[320px]
+            md:w-[380px] md:h-[380px]
+            lg:w-[460px] lg:h-[460px]
+          "
+        >
+
+          {/* Ring 1 */}
+          <div
+            className="absolute inset-0 rounded-full border border-[#8A2BE2]/30"
+            style={{ transform: "scale(1.12)" }}
+          />
+
+          {/* Ring 2 */}
+          <div
+            className="absolute inset-0 rounded-full border border-[#C51BE2]/10"
+            style={{ transform: "scale(1.28)" }}
+          />
+
+          {/* Glow */}
+          <div
+            className="
+              absolute inset-0
+              rounded-full
+              bg-[#8A2BE2]/20
+              blur-3xl
+              scale-90
+            "
+          />
+
+          {/* Mascot */}
+          <Image
+            src={service.mascot}
+            alt={`${service.title} mascot`}
+            fill
+            priority
+            className="
+              object-contain
+              drop-shadow-[0_0_40px_rgba(138,43,226,0.45)]
+              scale-105
+              md:scale-110
+            "
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      {/* ── WHAT WE DO ───────────────────────────────────────────────────── */}
+      {/* ── WHAT WE DO ───────────────────────────────────────────────────── */}
+<section className="py-16 sm:py-20 md:py-28">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center gap-10 md:gap-12">
+
+    {/* Image */}
+    <div className="w-full md:flex-1">
+      <div className="rounded-2xl overflow-hidden border border-[#8A2BE2]/20 relative">
+        <Image
+          src={service.whatWeDoImage}
+          alt="What we do"
+          width={620}
+          height={420}
+          className="w-full h-[260px] sm:h-[360px] md:h-auto object-cover"
         />
 
-        <div className="max-w-7xl mx-auto px-5 md:px-16 flex flex-col md:flex-row items-center gap-12 md:gap-8">
-          {/* Left */}
-          <div className="w-full md:flex-1 z-10">
-            <Breadcrumb label={service.breadcrumb} />
+        {/* Gradient overlay */}
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0F0F0F]/60 to-transparent" />
+      </div>
+    </div>
 
-            <h1
-              className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {service.title.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="bg-white bg-clip-text text-transparent">
-                {service.title.split(" ").slice(-1)}
-              </span>
-            </h1>
+    {/* Content */}
+    <div className="w-full md:flex-1 text-center md:text-left">
+      <SectionLabel text="What We Do" />
 
-            <p className="text-gray-400 mt-5 text-sm sm:text-base max-w-xl leading-relaxed">
-              {service.subtext}
-            </p>
+      <div className="flex justify-center md:justify-start">
+        <GradientHeading>
+          Crafting{" "}
+          <span className="bg-gradient-to-r from-[#C51BE2] to-[#8A2BE2] bg-clip-text text-transparent">
+            Excellence
+          </span>{" "}
+          in Every Project
+        </GradientHeading>
+      </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Link
-                href="/contact"
-                className="px-6 py-3 rounded-full text-sm md:text-base bg-gradient-to-r from-[#C51BE2] to-[#8A2BE2] hover:opacity-90 transition font-medium text-center"
-              >
-                Get a Quote
-              </Link>
-              <Link
-                href="/projects"
-                className="px-6 py-3 rounded-full text-sm md:text-base border border-white/20 hover:bg-white/10 transition text-center"
-              >
-                See Our Work
-              </Link>
-            </div>
-          </div>
-
-          {/* Right – Mascot */}
-          <div className="w-full md:flex-1 flex justify-center md:justify-end z-10">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-              {/* Decorative ring */}
-              <div
-                className="absolute inset-0 rounded-full border border-[#8A2BE2]/30"
-                style={{ transform: "scale(1.15)" }}
-              />
-              <div
-                className="absolute inset-0 rounded-full border border-[#C51BE2]/10"
-                style={{ transform: "scale(1.35)" }}
-              />
-              <Image
-                src={service.mascot}
-                alt={`${service.title} mascot`}
-                fill
-                className="object-contain drop-shadow-[0_0_40px_rgba(138,43,226,0.4)] scale-150"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHAT WE DO ───────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-5 md:px-16 flex flex-col md:flex-row items-center gap-12">
-          {/* Image */}
-          <div className="w-full md:flex-1">
-            <div className="rounded-2xl overflow-hidden border border-[#8A2BE2]/20 relative">
-              <Image
-                src={service.whatWeDoImage}
-                alt="What we do"
-                width={620}
-                height={420}
-                className="w-full h-auto object-cover"
-              />
-              {/* Gradient overlay at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0F0F0F]/60 to-transparent" />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="w-full md:flex-1">
-            <SectionLabel text="What We Do" />
-            <GradientHeading>
-              Crafting{" "}
-              <span className="bg-gradient-to-r from-[#C51BE2] to-[#8A2BE2] bg-clip-text text-transparent">
-                Excellence
-              </span>{" "}
-              in Every Project
-            </GradientHeading>
-            <p className="text-gray-300 mt-5 text-sm sm:text-base leading-relaxed">
-              {service.whatWeDoText}
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="text-gray-300 mt-5 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+        {service.whatWeDoText}
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* ── OUR SERVICES (OFFERINGS) ─────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-[#0A0A0A]">
@@ -973,7 +1133,7 @@ export default function ServiceDetailPage() {
                 </span>
 
                 {/* GIF */}
-                <div className="w-16 h-16 rounded-xl overflow-hidden mb-5 bg-white/5">
+                <div className="w-16 h-16 rounded-xl overflow-hidden mb-5 ">
                   <img
                     src={step.gif}
                     alt={step.title}
@@ -1014,70 +1174,97 @@ export default function ServiceDetailPage() {
 
           {/* Project cards */}
           {projects.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-              {projects.map((project) => {
-                const attr = project.attributes;
-                const thumbUrl =
-                  attr.thumbnail?.data?.attributes?.url
-                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${attr.thumbnail.data.attributes.url}`
-                    : "/placeholder.jpg";
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {projects.map((project) => {
+              const imageUrl = getStrapiMediaUrl(project.coverImage?.url);
 
-                return (
-                  <Link
-                    key={project.id}
-                    href={`/projects/${attr.slug}`}
-                    className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-[#8A2BE2]/50 transition-all duration-300"
-                  >
-                    <div className="relative h-56 sm:h-64 md:h-72">
-                      <Image
-                        src={thumbUrl}
-                        alt={attr.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    </div>
+              return (
+                <Link
+                  key={project.id}
+                  href={`/projects/${project.slug}`}
+                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 hover:border-[#8A2BE2]/50 transition-all duration-500"
+                >
+                  {/* Image */}
+                  <div className="relative h-[320px] overflow-hidden">
+                    <Image
+                      src={imageUrl}
+                      alt={project.title}
+                      fill
+                      unoptimized
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
 
-                    {/* Title */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                       <h3
-                        className="font-bold text-base sm:text-lg text-white"
+                        className="text-xl font-bold text-white mb-3"
                         style={{ fontFamily: "var(--font-heading)" }}
                       >
-                        {attr.title}
+                        {project.title}
                       </h3>
-                      <ArrowRight
-                        size={20}
-                        className="text-[#8A2BE2] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
-                      />
+
+                      <div className="inline-flex items-center gap-2 text-sm text-white/90 group-hover:text-[#C51BE2] transition-colors">
+                        <span>Read More About Project</span>
+
+                        <ArrowRight
+                          size={16}
+                          className="group-hover:translate-x-1 transition-transform duration-300"
+                        />
+                      </div>
                     </div>
-                  </Link>
-                );
-              })}
-            </div>
-          ) : (
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
             /* Skeleton / empty state */
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-              {[0, 1].map((i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl overflow-hidden border border-white/10 h-64 bg-white/5 animate-pulse"
-                />
-              ))}
+            <div className="flex flex-col items-center justify-center text-center py-20 px-6 border border-white/10 rounded-3xl bg-white/5">
+              
+              {/* Icon */}
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#C51BE2]/20 to-[#8A2BE2]/20 border border-[#8A2BE2]/20 flex items-center justify-center mb-6">
+                <span className="text-4xl">📁</span>
+              </div>
+
+              {/* Title */}
+              <h3
+                className="text-2xl md:text-3xl font-bold text-white"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                No Projects at the Moment
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-400 mt-4 max-w-md leading-relaxed text-sm md:text-base">
+                We’re currently preparing new work for this category. 
+                Check back soon to explore our latest creative projects and case studies.
+              </p>
+
+              {/* CTA */}
+              <Link
+                href="/contact"
+                className="mt-8 px-6 py-3 rounded-full bg-gradient-to-r from-[#C51BE2] to-[#8A2BE2] hover:opacity-90 transition text-sm md:text-base font-medium"
+              >
+                Start Your Project
+              </Link>
             </div>
           )}
 
           {/* CTA to portfolio */}
-          <div className="mt-10 flex justify-center">
-            <Link
-              href={`/projects?tab=${service.portfolioTab}`}
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-[#8A2BE2]/60 text-sm md:text-base hover:bg-[#8A2BE2]/20 transition"
-            >
-              Explore More Projects
-              <ArrowRight size={16} className="text-[#8A2BE2]" />
-            </Link>
-          </div>
+          {projects.length > 0 && (
+            <div className="mt-10 flex justify-center">
+              <Link
+                href={`/projects?tab=${service.portfolioTab}`}
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-[#8A2BE2]/60 text-sm md:text-base hover:bg-[#8A2BE2]/20 transition"
+              >
+                Explore More Projects
+                <ArrowRight size={16} className="text-[#8A2BE2]" />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1131,40 +1318,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#0A0A0A]">
-        <div className="max-w-3xl mx-auto px-5 md:px-16 text-center">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#8A2BE2] mb-4">
-            Ready to Start?
-          </p>
-          <h2
-            className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Let's Build Something{" "}
-            <span className="bg-gradient-to-r from-[#C51BE2] via-[#8A2BE2] to-[#FF0CE3] bg-clip-text text-transparent">
-              Remarkable
-            </span>
-          </h2>
-          <p className="text-gray-400 mt-5 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            Reach out today and one of our team will get back to you within 24
-            hours to discuss your project.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-9">
-            <Link
-              href="/contact"
-              className="px-8 py-3.5 rounded-full text-sm md:text-base bg-gradient-to-r from-[#C51BE2] to-[#8A2BE2] hover:opacity-90 transition font-medium"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              href="/services"
-              className="px-8 py-3.5 rounded-full text-sm md:text-base border border-white/20 hover:bg-white/10 transition"
-            >
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTA />
 
       <Footer />
     </main>

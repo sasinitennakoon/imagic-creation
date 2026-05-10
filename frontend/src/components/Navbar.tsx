@@ -10,16 +10,23 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // FIX: safe mount flag (prevents hydration mismatch)
+  const [mounted, setMounted] = useState(false);
+
   const pathname = usePathname();
 
-  // Scroll Effect
+  // FIRST LOAD ANIMATION CONTROL
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // SCROLL EFFECT
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -34,10 +41,14 @@ export default function Navbar() {
 
   return (
     <>
+      {/* NAVBAR */}
       <motion.nav
-        initial={{ y: -80, opacity: 0 }}
+        initial={mounted ? { y: -80, opacity: 0 } : false}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
             ? "backdrop-blur-xl bg-white/10 border-b border-white/10 shadow-sm"
@@ -57,7 +68,6 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
-
             {navItems.map((item, i) => {
               const active = pathname === item.href;
 
@@ -76,9 +86,7 @@ export default function Navbar() {
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#C51BE2]/20 via-[#8A2BE2]/20 to-[#FF0CE3]/20 blur-lg" />
                     )}
 
-                    <span className="relative z-10">
-                      {item.name}
-                    </span>
+                    <span className="relative z-10">{item.name}</span>
                   </motion.div>
                 </Link>
               );
@@ -88,7 +96,7 @@ export default function Navbar() {
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
 
-            {/* CTA BUTTON */}
+            {/* CTA */}
             <motion.a
               href="/contact"
               whileHover={{ scale: 1.05 }}
@@ -98,7 +106,7 @@ export default function Navbar() {
               Get a Quote
             </motion.a>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE BUTTON */}
             <button
               aria-label="Toggle Menu"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -106,7 +114,6 @@ export default function Navbar() {
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
-
           </div>
         </div>
       </motion.nav>
@@ -142,7 +149,7 @@ export default function Navbar() {
                 );
               })}
 
-              {/* MOBILE CTA */}
+              {/* CTA */}
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}

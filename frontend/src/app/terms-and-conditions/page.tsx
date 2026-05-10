@@ -229,9 +229,9 @@ export default function TermsAndConditionsPage() {
               </p>
 
               <div className="mt-6 space-y-2 text-gray-300">
-                <p>Email: hello@imagiccreation.com</p>
-                <p>Phone: +94 77 123 4567</p>
-                <p>Location: Kandy, Sri Lanka</p>
+                <p>Email: imagiccreation@outlook.com</p>
+                <p>Phone: +94 70 670 0770</p>
+                <p>Location: 13,2nd Lane,Nawala,Koswatte, Sri Lanka</p>
               </div>
             </div>
 

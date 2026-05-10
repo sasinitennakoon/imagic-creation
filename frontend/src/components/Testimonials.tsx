@@ -77,10 +77,12 @@ export default function Testimonials() {
 
         {/* HEADER */}
         <div className="flex flex-col items-center text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          
+            <motion.h2
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-60px" }}
+  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >

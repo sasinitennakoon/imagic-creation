@@ -13,29 +13,27 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#1E1E1E] text-white">
-
+    <footer className="w-full bg-[#1E1E1E] text-white overflow-hidden">
       {/* TOP SECTION */}
-      <div className="max-w-7xl mx-auto px-6 md:px-16 py-20">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10 lg:px-16 py-14 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12">
+          
           {/* COMPANY INFO */}
-          <div className="lg:col-span-2">
-
+          <div className="sm:col-span-2 lg:col-span-2 text-center sm:text-left">
+            
             {/* LOGO */}
-            <Link href="/">
+            <Link href="/" className="inline-block">
               <Image
                 src="/imagic logo.png"
                 alt="IMAGIC"
                 width={160}
                 height={60}
-                className="object-contain"
+                className="object-contain w-[140px] sm:w-[160px] h-auto"
               />
             </Link>
 
             {/* DESCRIPTION */}
-            <p className="text-gray-400 mt-6 leading-relaxed max-w-xs text-sm">
+            <p className="text-gray-400 mt-5 leading-relaxed text-sm max-w-sm mx-auto sm:mx-0">
               IMAGIC is a creative production and digital solutions agency
               specializing in video production, photography, design, and
               digital experiences that connect brands with audiences.
@@ -43,10 +41,7 @@ export default function Footer() {
 
             {/* CONTACT INFO */}
             <div className="mt-6 space-y-3 text-sm text-gray-300">
-
-              <p>
-                13,2nd Lane,Nawala,Koswatta
-              </p>
+              <p>13,2nd Lane,Nawala,Koswatta</p>
 
               <a
                 href="tel:+94771234567"
@@ -57,16 +52,14 @@ export default function Footer() {
 
               <a
                 href="mailto:hello@imagic.com"
-                className="block hover:text-white transition"
+                className="block hover:text-white transition break-all"
               >
                 imagiccreations@outlook.com
               </a>
-
             </div>
 
             {/* SOCIAL LINKS */}
-            <div className="flex items-center gap-4 mt-8">
-
+            <div className="flex items-center justify-center sm:justify-start gap-4 mt-8">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
@@ -94,18 +87,16 @@ export default function Footer() {
               >
                 <FaYoutube size={18} />
               </a>
-
             </div>
           </div>
 
           {/* COMPANY */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">
+          <div className="text-center sm:text-left">
+            <h3 className="text-lg font-semibold mb-5">
               Company
             </h3>
 
             <div className="flex flex-col gap-4 text-gray-400 text-sm">
-
               <Link
                 href="/about"
                 className="hover:text-white transition"
@@ -119,18 +110,16 @@ export default function Footer() {
               >
                 Projects
               </Link>
-
             </div>
           </div>
 
           {/* SERVICES */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">
+          <div className="text-center sm:text-left">
+            <h3 className="text-lg font-semibold mb-5">
               Services
             </h3>
 
             <div className="flex flex-col gap-4 text-gray-400 text-sm">
-
               <Link href="/services/video-production" className="hover:text-white transition">
                 Video Production
               </Link>
@@ -158,18 +147,16 @@ export default function Footer() {
               <Link href="/services/web-development" className="hover:text-white transition">
                 Web Development
               </Link>
-
             </div>
           </div>
 
           {/* SUPPORT */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">
+          <div className="text-center sm:text-left">
+            <h3 className="text-lg font-semibold mb-5">
               Support
             </h3>
 
             <div className="flex flex-col gap-4 text-gray-400 text-sm">
-
               <Link
                 href="/faq"
                 className="hover:text-white transition"
@@ -183,61 +170,60 @@ export default function Footer() {
               >
                 Contact Us
               </Link>
-
             </div>
           </div>
-
         </div>
 
         {/* DIVIDER */}
-        <div className="border-t border-white/10 mt-16 pt-8">
-
+        <div className="border-t border-white/10 mt-14 pt-8">
+          
           {/* BOTTOM */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
+            
             {/* COPYRIGHT */}
-            <p className="text-sm text-gray-400 text-center md:text-left">
+            <p className="text-sm text-gray-400 text-center lg:text-left">
               © {year} IMAGIC Creation. All rights reserved.
             </p>
 
             {/* LEGAL LINKS */}
-            <div className="flex flex-wrap items-center justify-center text-sm text-gray-400">
+            {/* LEGAL LINKS */}
+<div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm text-gray-400 text-center">
+  
+  <Link
+    href="/privacy-policy"
+    className="hover:text-white transition"
+  >
+    Privacy Policy
+  </Link>
 
-             <Link
-                href="/privacy-policy"
-                className="hover:text-white transition"
-                >
-                Privacy Policy
-                </Link>
+  <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-                <span className="mx-3 text-white/20">•</span>
+  <Link
+    href="/terms-and-conditions"
+    className="hover:text-white transition"
+  >
+    Terms & Conditions
+  </Link>
 
-                <Link
-                href="/terms-and-conditions"
-                className="hover:text-white transition"
-                >
-                Terms & Conditions
-                </Link>
+  <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-                <span className="mx-3 text-white/20">•</span>
+  <Link
+    href="/sitemap"
+    className="hover:text-white transition"
+  >
+    Sitemap
+  </Link>
 
-                <Link
-                href="/sitemap"
-                className="hover:text-white transition"
-                >
-                Sitemap
-                </Link>
+  <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-                <span className="mx-3 text-white/20">•</span>
+  <Link
+    href="/cookies"
+    className="hover:text-white transition"
+  >
+    Cookies
+  </Link>
 
-                <Link
-                href="/cookies"
-                className="hover:text-white transition"
-                >
-                Cookies
-                </Link>
-
-            </div>
+</div>
           </div>
         </div>
       </div>

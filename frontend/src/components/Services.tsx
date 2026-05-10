@@ -65,10 +65,25 @@ export default function Services() {
   };
 
   const variants = {
-    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 80 : -80 }),
-    center: { opacity: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -80 : 80 }),
-  };
+  enter: (dir: number) => ({
+    opacity: 0,
+    x: dir > 0 ? 60 : -60,
+    scale: 0.98,
+    filter: "blur(6px)",
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: "blur(0px)",
+  },
+  exit: (dir: number) => ({
+    opacity: 0,
+    x: dir > 0 ? -60 : 60,
+    scale: 0.98,
+    filter: "blur(6px)",
+  }),
+};
 
   return (
     <section className="w-full bg-[#0F0F0F] text-white py-14 md:py-24">
@@ -168,11 +183,16 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="border border-[#8A2BE2]/30 bg-[#0F0F0F] p-6 rounded-xl h-[300px] flex flex-col hover:scale-[1.03] transition"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ scale: 1.03 }}  // 👈 add this
+              className="border border-[#8A2BE2]/30 bg-[#0F0F0F] p-6 rounded-xl h-[300px] flex flex-col" // 👈 remove hover:scale-[1.03] and transition
             >
               <Image
                 src={service.icon}

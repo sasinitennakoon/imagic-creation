@@ -19,7 +19,7 @@ const clients: ClientLogo[] = [
 
 export default function Clients() {
   return (
-    <section className="w-full bg-[#0F0F0F] text-white py-24 overflow-hidden">
+    <section className="w-full bg-[#0F0F0F] text-white py-12 md:py-24 overflow-hidden">
 
       {/* HEADER (same system as About) */}
       <div className="flex flex-col items-center text-center">
