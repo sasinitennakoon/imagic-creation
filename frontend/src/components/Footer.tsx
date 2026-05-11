@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FaFacebookF,
-  FaInstagram,
+  FaTiktok,
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
@@ -61,31 +61,24 @@ export default function Footer() {
             {/* SOCIAL LINKS */}
             <div className="flex items-center justify-center sm:justify-start gap-4 mt-8">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1HwdWvNbJU/?mibextid=wwXIfr"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
                 <FaFacebookF size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@imagic.creation?_r=1&_t=ZS-96GFpyQ947u"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
-                <FaInstagram size={18} />
+                <FaTiktok size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/imagic-creation/"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
                 <FaLinkedinIn size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
-              >
-                <FaYoutube size={18} />
               </a>
             </div>
           </div>
