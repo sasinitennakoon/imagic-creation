@@ -67,10 +67,6 @@ const processes = [
   },
 ];
 
-export const metadata = {
-  title: "About Us | Imagic Creation",
-  description: "Learn about Imagic Creation, a Sri Lankan creative production house specializing in video, photography, and design.",
-};
 
 export default function AboutPage() {
   return (
