@@ -84,7 +84,7 @@ function ProjectsContent() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: smoothEase }}
-          className="text-gray-400 mt-5 max-w-2xl leading-relaxed text-sm md:text-base"
+          className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base"
         >
           Explore our creative portfolio featuring projects in photography,
           production, design, branding, development, and digital experiences.
