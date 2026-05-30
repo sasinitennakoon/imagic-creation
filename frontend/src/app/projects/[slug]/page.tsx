@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 async function getProject(slug: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?filters[slug][$eq]=${slug}&populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?filters[slug][$eq]=${slug}&populate[contentBlocks][populate]=*&populate[coverImage]=*&populate[gallery]=*&populate[highlight]=*&populate[testimonial]=*&populate[clientLogo]=*`,
     { cache: "no-store" }
   );
   if (!res.ok) return null;
