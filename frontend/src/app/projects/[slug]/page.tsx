@@ -175,12 +175,19 @@ function renderBlock(block: any) {
         {block.images?.map((img: any) => (
           <div
             key={img.id}
-            className="overflow-hidden rounded-xl bg-zinc-900 mb-3 break-inside-avoid"
+            style={{
+              breakInside: "avoid",
+              marginBottom: "12px",
+              display: "inline-block",  // ← key fix
+              width: "100%",            // ← key fix
+            }}
+            className="overflow-hidden rounded-xl bg-zinc-900"
           >
             <img
               src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
               alt={img.alternativeText ?? ""}
-              className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
+              style={{ display: "block", width: "100%", height: "auto" }}
+              className="transition-transform duration-500 hover:scale-105"
             />
           </div>
         ))}
