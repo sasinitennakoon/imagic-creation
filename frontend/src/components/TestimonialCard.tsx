@@ -8,7 +8,6 @@ export function TestimonialCard({ t }: { t: any }) {
   const isLong = t.quote && t.quote.length > LIMIT;
   const truncated = isLong ? t.quote.slice(0, LIMIT).trimEnd() : t.quote;
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -18,7 +17,6 @@ export function TestimonialCard({ t }: { t: any }) {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Close on Escape key
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
     window.addEventListener("keydown", handler);
@@ -78,62 +76,82 @@ export function TestimonialCard({ t }: { t: any }) {
 
       {/* Modal */}
       {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10"
-          style={{ background: "rgba(0,0,0,0.80)", backdropFilter: "blur(8px)" }}
-          onClick={() => setOpen(false)}
-        >
+        <>
+          <style>{`
+            .testimonial-modal::-webkit-scrollbar {
+              width: 4px;
+            }
+            .testimonial-modal::-webkit-scrollbar-track {
+              background: transparent;
+            }
+            .testimonial-modal::-webkit-scrollbar-thumb {
+              background: rgba(138, 43, 226, 0.5);
+              border-radius: 999px;
+            }
+            .testimonial-modal::-webkit-scrollbar-thumb:hover {
+              background: rgba(138, 43, 226, 0.85);
+            }
+          `}</style>
+
           <div
-            className="relative w-full rounded-2xl p-6 sm:p-8 md:p-10"
-            style={{
-              background: "#0f0f0f",
-              border: "1px solid rgba(138,43,226,.35)",
-              maxWidth: "min(760px, 95vw)",
-              maxHeight: "90vh",
-              overflowY: "auto",
-            }}
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10"
+            style={{ background: "rgba(0,0,0,0.80)", backdropFilter: "blur(8px)" }}
+            onClick={() => setOpen(false)}
           >
-            {/* Close button */}
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center w-9 h-9 rounded-full border border-white/10 hover:border-[#8A2BE2] text-zinc-400 hover:text-[#8A2BE2] transition-all"
+            <div
+              className="testimonial-modal relative w-full rounded-2xl p-6 sm:p-8 md:p-10"
+              style={{
+                background: "#0f0f0f",
+                border: "1px solid rgba(138,43,226,.35)",
+                maxWidth: "min(760px, 95vw)",
+                maxHeight: "90vh",
+                overflowY: "auto",
+                scrollbarWidth: "thin",
+                scrollbarColor: "rgba(138,43,226,0.5) transparent",
+              }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-4 h-4" />
-            </button>
+              {/* Close button */}
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close"
+                className="absolute top-4 right-4 flex items-center justify-center w-9 h-9 rounded-full border border-white/10 hover:border-[#8A2BE2] text-zinc-400 hover:text-[#8A2BE2] transition-all"
+              >
+                <X className="w-4 h-4" />
+              </button>
 
-            {/* Quote mark */}
-            <span
-              className="block text-6xl sm:text-7xl font-serif leading-none mb-3 select-none"
-              style={{ color: "#8A2BE2" }}
-              aria-hidden
-            >
-              "
-            </span>
+              {/* Quote mark */}
+              <span
+                className="block text-6xl sm:text-7xl font-serif leading-none mb-3 select-none"
+                style={{ color: "#8A2BE2" }}
+                aria-hidden
+              >
+                "
+              </span>
 
-            {/* Full quote */}
-            <p className="text-base sm:text-lg md:text-xl font-medium text-zinc-100 leading-relaxed italic pr-2">
-              {t.quote}
-            </p>
+              {/* Full quote */}
+              <p className="text-base sm:text-lg md:text-xl font-medium text-zinc-100 leading-relaxed italic pr-2">
+                {t.quote}
+              </p>
 
-            {/* Author */}
-            {(t.authorName || t.authorRole) && (
-              <footer className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
-                <div
-                  className="flex items-center justify-center w-11 h-11 rounded-full text-sm font-bold shrink-0"
-                  style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
-                >
-                  {t.authorName?.[0]?.toUpperCase() ?? "?"}
-                </div>
-                <div>
-                  {t.authorName && <p className="font-semibold text-white text-sm">{t.authorName}</p>}
-                  {t.authorRole && <p className="text-xs text-zinc-400 mt-0.5">{t.authorRole}</p>}
-                </div>
-              </footer>
-            )}
+              {/* Author */}
+              {(t.authorName || t.authorRole) && (
+                <footer className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
+                  <div
+                    className="flex items-center justify-center w-11 h-11 rounded-full text-sm font-bold shrink-0"
+                    style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
+                  >
+                    {t.authorName?.[0]?.toUpperCase() ?? "?"}
+                  </div>
+                  <div>
+                    {t.authorName && <p className="font-semibold text-white text-sm">{t.authorName}</p>}
+                    {t.authorRole && <p className="text-xs text-zinc-400 mt-0.5">{t.authorRole}</p>}
+                  </div>
+                </footer>
+              )}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

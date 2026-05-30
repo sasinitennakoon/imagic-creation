@@ -570,7 +570,7 @@ export default async function ProjectPage({
                       }}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      Visit Live Site
+                      Visit Work
                     </a>
                   </div>
                 )}
