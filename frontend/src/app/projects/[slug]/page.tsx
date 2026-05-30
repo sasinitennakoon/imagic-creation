@@ -1,11 +1,8 @@
-"use client";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
-import { useState } from "react";
-import { X } from "lucide-react";
-
+import { TestimonialCard } from "@/components/TestimonialCard";
 
 
 /* ─────────────────────────────────────────────
@@ -34,133 +31,6 @@ async function getAllProjects() {
 /* ─────────────────────────────────────────────
    HELPERS
 ───────────────────────────────────────────── */
-
-function TestimonialCard({ t }: { t: any }) {
-  const [open, setOpen] = useState(false);
-  const LIMIT = 200;
-  const isLong = t.quote && t.quote.length > LIMIT;
-  const truncated = isLong ? t.quote.slice(0, LIMIT).trimEnd() : t.quote;
-
-  return (
-    <>
-      {/* Card */}
-      <div
-        className="rounded-2xl p-6"
-        style={{
-          background: "linear-gradient(135deg,rgba(138,43,226,.10) 0%,rgba(0,0,0,0) 100%)",
-          border: "1px solid rgba(138,43,226,.25)",
-        }}
-      >
-        <span
-          className="block text-5xl font-serif leading-none mb-2 select-none"
-          style={{ color: "#8A2BE2" }}
-          aria-hidden
-        >
-          "
-        </span>
-        {t.quote && (
-          <p className="text-sm md:text-base font-medium text-zinc-100 leading-relaxed italic">
-            {isLong ? (
-              <>
-                {truncated}
-                <span className="text-zinc-500">…</span>
-                {" "}
-                <button
-                  onClick={() => setOpen(true)}
-                  className="text-[#c084fc] hover:text-[#a855f7] text-sm font-semibold not-italic underline underline-offset-2 transition-colors"
-                >
-                  Read more
-                </button>
-              </>
-            ) : (
-              t.quote
-            )}
-          </p>
-        )}
-        {(t.authorName || t.authorRole) && (
-          <footer className="mt-5 flex items-center gap-3">
-            <div
-              className="flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold shrink-0"
-              style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
-            >
-              {t.authorName?.[0]?.toUpperCase() ?? "?"}
-            </div>
-            <div>
-              {t.authorName && (
-                <p className="font-semibold text-white text-sm">{t.authorName}</p>
-              )}
-              {t.authorRole && (
-                <p className="text-xs text-zinc-400 mt-0.5">{t.authorRole}</p>
-              )}
-            </div>
-          </footer>
-        )}
-      </div>
-
-      {/* Modal */}
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(6px)" }}
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-lg rounded-2xl p-8"
-            style={{
-              background: "#0f0f0f",
-              border: "1px solid rgba(138,43,226,.35)",
-              maxHeight: "85vh",
-              overflowY: "auto",
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 hover:border-[#8A2BE2] text-zinc-400 hover:text-[#8A2BE2] transition-all"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            {/* Quote */}
-            <span
-              className="block text-6xl font-serif leading-none mb-2 select-none"
-              style={{ color: "#8A2BE2" }}
-              aria-hidden
-            >
-              "
-            </span>
-            <p className="text-base md:text-lg font-medium text-zinc-100 leading-relaxed italic pr-4">
-              {t.quote}
-            </p>
-
-            {/* Author */}
-            {(t.authorName || t.authorRole) && (
-              <footer className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                <div
-                  className="flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold shrink-0"
-                  style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
-                >
-                  {t.authorName?.[0]?.toUpperCase() ?? "?"}
-                </div>
-                <div>
-                  {t.authorName && (
-                    <p className="font-semibold text-white text-sm">{t.authorName}</p>
-                  )}
-                  {t.authorRole && (
-                    <p className="text-xs text-zinc-400 mt-0.5">{t.authorRole}</p>
-                  )}
-                </div>
-              </footer>
-            )}
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
 
 /** tags field is plain Text in Strapi — comma-separated or JSON array string */
 function parseTags(raw: any): string[] {
@@ -601,13 +471,13 @@ export default async function ProjectPage({
 
           {/* Testimonials — repeatable component: quote / authorName / authorRole */}
           {testimonials.length > 0 && (
-  <section className="mt-16 pt-12 border-t border-white/10 space-y-6">
-    <h2 className="text-2xl font-bold text-white">What They Said</h2>
-    {testimonials.map((t: any, i: number) => (
-      <TestimonialCard key={i} t={t} />
-    ))}
-  </section>
-)}
+            <section className="mt-16 pt-12 border-t border-white/10 space-y-6">
+              <h2 className="text-2xl font-bold text-white">What They Said</h2>
+              {testimonials.map((t: any, i: number) => (
+                <TestimonialCard key={i} t={t} />
+              ))}
+            </section>
+          )}
         </main>
 
         {/* ────── SIDEBAR ────── */}
