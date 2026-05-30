@@ -26,7 +26,7 @@ export default function CTA() {
 
             {/* TITLE */}
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ready to Bring Your Ideas to Life?

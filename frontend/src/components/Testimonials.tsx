@@ -73,16 +73,16 @@ export default function Testimonials() {
 
   return (
     <section className="w-full bg-[#0F0F0F] text-white py-20 md:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-16">
 
         {/* HEADER */}
         <div className="flex flex-col items-center text-center">
           
             <motion.h2
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: "-60px" }}
-  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >

@@ -19,7 +19,8 @@ const clients: ClientLogo[] = [
 
 export default function Clients() {
   return (
-    <section className="w-full bg-[#0F0F0F] text-white py-12 md:py-24 overflow-hidden">
+    <section className="w-full bg-[#0F0F0F] text-white py-14 md:py-24">
+      <div className="max-w-7xl mx-auto px-5 md:px-16">
 
       {/* HEADER (same system as About) */}
       <div className="flex flex-col items-center text-center">
@@ -39,9 +40,14 @@ export default function Clients() {
             </span>
           </motion.h2>
 
-          <p className="text-gray-400 mt-4 max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-gray-400 mt-3 md:mt-4 text-sm sm:text-base max-w-xl"
+          >
             Don't just take our word for it. Here's what our clients have to say about working with Imagic.
-          </p>
+          </motion.p>
         </div>
 
       {/* MARQUEE (same container width system) */}
@@ -103,7 +109,7 @@ export default function Clients() {
           animation: marquee 18s linear infinite;
         }
       `}</style>
-
+      </div>
     </section>
   );
 }

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CheckCircle } from "@phosphor-icons/react";
 
 type Service = {
   slug: string;
@@ -169,7 +170,7 @@ export default function ServicesPage() {
         {services.map((service) => (
           <div
             key={service.slug}
-            className={`max-w-7xl mx-auto px-5 md:px-16 flex flex-col md:flex-row items-center gap-10 md:gap-12 ${
+            className={`max-w-7xl mx-auto px-5 md:px-16 flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-12 ${
               service.reverse ? "md:flex-row-reverse" : ""
             }`}
           >
@@ -225,7 +226,9 @@ export default function ServicesPage() {
                       ease: smoothEase,
                     }}
                   >
-                    <span className="text-[#8A2BE2] mt-0.5 flex-shrink-0">✔</span>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mt-0.5">
+  <CheckCircle size={18} weight="fill" className="text-[#8A2BE2]" />
+</div>
                     <p className="text-gray-300 text-sm sm:text-base">{p}</p>
                   </motion.div>
                 ))}

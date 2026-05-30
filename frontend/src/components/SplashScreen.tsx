@@ -31,7 +31,7 @@ export default function SplashScreen() {
             width={320}
             height={120}
             priority
-            className="select-none"
+            className="select-none w-[200px] sm:w-[280px] md:w-[320px] h-auto"
           />
         </motion.div>
 

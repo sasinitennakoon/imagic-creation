@@ -271,7 +271,11 @@ Our team is made up of passionate creators who believe that every project is mor
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="border border-[#8A2BE2]/30 bg-[#111111] rounded-2xl p-6 flex flex-col items-center text-center hover:scale-[1.03] transition"
               >
 

@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[580px] md:h-[736px] w-full overflow-hidden flex items-end md:items-center pb-12 md:pb-0">
+    <section
+      className="relative w-full overflow-hidden flex items-center"
+      style={{ minHeight: '100svh' }}
+    >
 
       {/* 🎥 BACKGROUND VIDEO — full screen on both mobile & desktop */}
       <video
@@ -21,7 +24,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70 hidden md:block" />
 
       {/* MOBILE GRADIENT — subtle bottom-up gradient so text stays readable over video */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:hidden" />
+      <div className="absolute inset-0 bg-black/60 md:hidden" />
 
       {/* CONTENT WRAPPER */}
       <div className="relative z-10 w-full">

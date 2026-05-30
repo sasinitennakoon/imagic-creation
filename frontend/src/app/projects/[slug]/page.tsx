@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink, ChevronRight } from "lucide-react";
+import Footer from "@/components/Footer";
 
 /* ─────────────────────────────────────────────
    DATA FETCHING
@@ -125,22 +126,22 @@ function renderBlock(block: any) {
 
     /* ── ImageBlock ── */
     case "blocks.image-block":
-      return block.image?.url ? (
-        <figure className="mt-8">
-          <div className="overflow-hidden rounded-xl bg-zinc-900">
-            <img
-              src={block.image.url.startsWith("http") ? block.image.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${block.image.url}`}
-              alt={block.image.alternativeText ?? ""}
-              className="w-full object-cover"
-            />
-          </div>
-          {block.caption && (
-            <figcaption className="mt-3 text-center text-sm text-zinc-500">
-              {block.caption}
-            </figcaption>
-          )}
-        </figure>
-      ) : null;
+  return block.image?.url ? (
+    <figure className="mt-8">
+      <div className="overflow-hidden rounded-xl bg-zinc-900">
+        <img
+          src={block.image.url.startsWith("http") ? block.image.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${block.image.url}`}
+          alt={block.image.alternativeText ?? ""}
+          className="w-full h-auto object-contain"
+        />
+      </div>
+      {block.caption && (
+        <figcaption className="mt-3 text-center text-sm text-zinc-500">
+          {block.caption}
+        </figcaption>
+      )}
+    </figure>
+  ) : null;
 
     /* ── VideoBlock ── */
     case "blocks.video-block":
@@ -158,29 +159,34 @@ function renderBlock(block: any) {
 
     /* ── GalleryBlock ── */
     case "blocks.gallery-block":
-      return (
-        <div className="mt-10">
-          {block.caption && (
-            <h3 className="text-xl font-semibold text-white mb-5">
-              {block.caption}
-            </h3>
-          )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-            {block.images?.map((img: any) => (
-              <div
-                key={img.id}
-                className="overflow-hidden rounded-xl bg-zinc-900 aspect-video"
-              >
-                <img
-                  src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
-                  alt={img.alternativeText ?? ""}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            ))}
+  return (
+    <div className="mt-10">
+      {block.caption && (
+        <h3 className="text-xl font-semibold text-white mb-5">
+          {block.caption}
+        </h3>
+      )}
+      <div
+        style={{
+          columns: "2",
+          columnGap: "12px",
+        }}
+      >
+        {block.images?.map((img: any) => (
+          <div
+            key={img.id}
+            className="overflow-hidden rounded-xl bg-zinc-900 mb-3 break-inside-avoid"
+          >
+            <img
+              src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
+              alt={img.alternativeText ?? ""}
+              className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
+            />
           </div>
-        </div>
-      );
+        ))}
+      </div>
+    </div>
+  );
 
     /* ── QuoteBlock ── */
     case "blocks.quote-block":
@@ -429,19 +435,24 @@ export default async function ProjectPage({
           {/* Top-level gallery (separate from GalleryBlock) */}
           {attrs.gallery?.length > 0 && (
             <section className="mt-16 pt-12 border-t border-white/10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white mt-8 md:mt-10 mb-2 md:mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white mt-8 md:mt-10 mb-6">
                 Project Gallery
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <div
+                style={{
+                  columns: "2",
+                  columnGap: "12px",
+                }}
+              >
                 {attrs.gallery.map((img: any) => (
                   <div
                     key={img.id}
-                    className="overflow-hidden rounded-xl bg-zinc-900 aspect-video group"
+                    className="overflow-hidden rounded-xl bg-zinc-900 mb-3 break-inside-avoid group"
                   >
                     <img
                       src={img.url.startsWith("http") ? img.url : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`}
                       alt={img.alternativeText ?? ""}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 ))}
@@ -663,6 +674,8 @@ export default async function ProjectPage({
           </div>
         </nav>
       )}
+      <Footer />
     </div>
+    
   );
 }
