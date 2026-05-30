@@ -87,7 +87,7 @@ export interface ProjectTestimonial extends Struct.ComponentSchema {
   attributes: {
     authorName: Schema.Attribute.String;
     authorRole: Schema.Attribute.String;
-    quote: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
   };
 }
 

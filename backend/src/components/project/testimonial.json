@@ -7,7 +7,7 @@
   "options": {},
   "attributes": {
     "quote": {
-      "type": "string"
+      "type": "text"
     },
     "authorName": {
       "type": "string"
