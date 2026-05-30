@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
 export function TestimonialCard({ t }: { t: any }) {
@@ -8,8 +8,26 @@ export function TestimonialCard({ t }: { t: any }) {
   const isLong = t.quote && t.quote.length > LIMIT;
   const truncated = isLong ? t.quote.slice(0, LIMIT).trimEnd() : t.quote;
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <>
+      {/* Card */}
       <div
         className="rounded-2xl p-6"
         style={{
@@ -17,7 +35,13 @@ export function TestimonialCard({ t }: { t: any }) {
           border: "1px solid rgba(138,43,226,.25)",
         }}
       >
-        <span className="block text-5xl font-serif leading-none mb-2 select-none" style={{ color: "#8A2BE2" }} aria-hidden>"</span>
+        <span
+          className="block text-5xl font-serif leading-none mb-2 select-none"
+          style={{ color: "#8A2BE2" }}
+          aria-hidden
+        >
+          "
+        </span>
         {t.quote && (
           <p className="text-sm md:text-base font-medium text-zinc-100 leading-relaxed italic">
             {isLong ? (
@@ -38,7 +62,10 @@ export function TestimonialCard({ t }: { t: any }) {
         )}
         {(t.authorName || t.authorRole) && (
           <footer className="mt-5 flex items-center gap-3">
-            <div className="flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold shrink-0" style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}>
+            <div
+              className="flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold shrink-0"
+              style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
+            >
               {t.authorName?.[0]?.toUpperCase() ?? "?"}
             </div>
             <div>
@@ -49,29 +76,54 @@ export function TestimonialCard({ t }: { t: any }) {
         )}
       </div>
 
+      {/* Modal */}
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(6px)" }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10"
+          style={{ background: "rgba(0,0,0,0.80)", backdropFilter: "blur(8px)" }}
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-lg rounded-2xl p-8"
-            style={{ background: "#0f0f0f", border: "1px solid rgba(138,43,226,.35)", maxHeight: "85vh", overflowY: "auto" }}
+            className="relative w-full rounded-2xl p-6 sm:p-8 md:p-10"
+            style={{
+              background: "#0f0f0f",
+              border: "1px solid rgba(138,43,226,.35)",
+              maxWidth: "min(760px, 95vw)",
+              maxHeight: "90vh",
+              overflowY: "auto",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close button */}
             <button
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 hover:border-[#8A2BE2] text-zinc-400 hover:text-[#8A2BE2] transition-all"
+              className="absolute top-4 right-4 flex items-center justify-center w-9 h-9 rounded-full border border-white/10 hover:border-[#8A2BE2] text-zinc-400 hover:text-[#8A2BE2] transition-all"
             >
               <X className="w-4 h-4" />
             </button>
-            <span className="block text-6xl font-serif leading-none mb-2 select-none" style={{ color: "#8A2BE2" }} aria-hidden>"</span>
-            <p className="text-base md:text-lg font-medium text-zinc-100 leading-relaxed italic pr-4">{t.quote}</p>
+
+            {/* Quote mark */}
+            <span
+              className="block text-6xl sm:text-7xl font-serif leading-none mb-3 select-none"
+              style={{ color: "#8A2BE2" }}
+              aria-hidden
+            >
+              "
+            </span>
+
+            {/* Full quote */}
+            <p className="text-base sm:text-lg md:text-xl font-medium text-zinc-100 leading-relaxed italic pr-2">
+              {t.quote}
+            </p>
+
+            {/* Author */}
             {(t.authorName || t.authorRole) && (
-              <footer className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold shrink-0" style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}>
+              <footer className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
+                <div
+                  className="flex items-center justify-center w-11 h-11 rounded-full text-sm font-bold shrink-0"
+                  style={{ background: "rgba(138,43,226,0.25)", color: "#c084fc" }}
+                >
                   {t.authorName?.[0]?.toUpperCase() ?? "?"}
                 </div>
                 <div>
