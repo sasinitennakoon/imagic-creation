@@ -26,6 +26,7 @@ const categoryColors: Record<string, string> = {
   editing: "bg-green-500/80 text-white",
   "graphic design": "bg-orange-500/80 text-white",
   "live production": "bg-red-500/80 text-white",
+  "web design & development": "bg-purple-500/80 text-white",
 };
 
 const filters = [
@@ -38,6 +39,14 @@ const filters = [
   { label: "Web Development", value: "Web Development" },
   { label: "Graphic Design", value: "Graphic Design" },
 ];
+
+function resolveDisplayType(projectType: string, activeFilter: string): string {
+  if (projectType !== "Web Design & Development") return projectType;
+  const f = activeFilter.toLowerCase();
+  if (f === "web design") return "Web Design";
+  if (f === "web development") return "Web Development";
+  return "Web Development"; // default in "all" tab
+}
 
 // ✅ COMPONENT 1: contains useSearchParams + all the page content
 function ProjectsContent() {
@@ -57,11 +66,16 @@ function ProjectsContent() {
   }, []);
 
   const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter(
-          (p) => p.projectType?.toLowerCase() === activeFilter.toLowerCase()
-        );
+  activeFilter === "all"
+    ? projects
+    : projects.filter((p) => {
+        const type = p.projectType?.toLowerCase() || "";
+        const filter = activeFilter.toLowerCase();
+        if (type === "web design & development") {
+          return filter === "web design" || filter === "web development";
+        }
+        return type === filter;
+      });
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-20 md:mb-24">
@@ -151,7 +165,8 @@ function ProjectsContent() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
           {filteredProjects.map((p, index) => {
             const img = p.coverImage?.url;
-            const normalizedType = p.projectType?.toLowerCase() || "";
+            const displayType = resolveDisplayType(p.projectType || "", activeFilter);
+            const normalizedType = displayType.toLowerCase();
             const isLarge = index % 5 === 0;
 
             return (
@@ -186,7 +201,7 @@ function ProjectsContent() {
                         categoryColors[normalizedType] || "bg-white/10 text-white"
                       }`}
                     >
-                      {p.projectType}
+                      {displayType}
                     </span>
                   </div>
                   <div className="p-6 md:p-7 flex flex-col flex-grow">

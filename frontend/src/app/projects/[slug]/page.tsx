@@ -324,17 +324,22 @@ export default async function ProjectPage({
     </Link>
 
     {attrs.projectType && (
-      <>
-        <ChevronRight className="w-3 h-3 text-zinc-700 shrink-0" />
-
-        <Link
-          href={`/projects?type=${attrs.projectType}`}
-          className="hover:text-white transition-colors capitalize shrink-0"
-        >
-          {attrs.projectType}
-        </Link>
-      </>
-    )}
+  <>
+    <ChevronRight className="w-3 h-3 text-zinc-700 shrink-0" />
+    <Link
+      href={`/projects?type=${
+        attrs.projectType === "Web Design & Development"
+          ? "Web Design"
+          : attrs.projectType
+      }`}
+      className="hover:text-white transition-colors capitalize shrink-0"
+    >
+      {attrs.projectType === "Web Design & Development"
+        ? "Web Design & Development"
+        : attrs.projectType}
+    </Link>
+  </>
+)}
 
     <ChevronRight className="w-3 h-3 text-zinc-700 shrink-0" />
 
@@ -346,16 +351,24 @@ export default async function ProjectPage({
 
         {/* Project type pill */}
         {attrs.projectType && (
-          <span
-            className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-            style={{
-              background: "rgba(138,43,226,0.15)",
-              color: "#8A2BE2",
-              border: "1px solid rgba(138,43,226,0.35)",
-            }}
-          >
-            {attrs.projectType}
-          </span>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {(attrs.projectType === "Web Design & Development"
+              ? ["Web Design", "Web Development"]
+              : [attrs.projectType]
+            ).map((type: string, i: number) => (
+              <span
+                key={i}
+                className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
+                style={{
+                  background: "rgba(138,43,226,0.15)",
+                  color: "#8A2BE2",
+                  border: "1px solid rgba(138,43,226,0.35)",
+                }}
+              >
+                {type}
+              </span>
+            ))}
+          </div>
         )}
 
         {/* Title */}
@@ -536,13 +549,21 @@ export default async function ProjectPage({
 
               <dl className="divide-y divide-white/[0.05]">
                 {attrs.projectType && (
-                  <div className="flex items-center justify-between px-4 sm:px-6 py-3">
-                    <dt className="text-xs text-zinc-500">Type</dt>
-                    <dd className="text-sm font-medium text-zinc-200 capitalize">
-                      {attrs.projectType}
-                    </dd>
-                  </div>
-                )}
+                <div className="flex items-start justify-between px-4 sm:px-6 py-3">
+                  <dt className="text-xs text-zinc-500 mt-0.5">Type</dt>
+                  <dd className="flex flex-col items-end gap-1">
+                    {(attrs.projectType === "Web Design & Development"
+                      ? ["Web Design", "Web Development"]
+                      : [attrs.projectType]
+                    ).map((type: string, i: number) => (
+                      <span key={i} className="text-sm font-medium text-zinc-200 capitalize">
+                        {type}
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              )}
+
                 {formattedDate && (
                   <div className="flex items-center justify-between px-6 py-3.5">
                     <dt className="text-xs text-zinc-500">Date</dt>
