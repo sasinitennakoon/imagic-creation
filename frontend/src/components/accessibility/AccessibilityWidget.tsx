@@ -31,7 +31,7 @@ export default function AccessibilityWidget() {
       >
         <Accessibility className="h-5 w-5 text-[#FF0CE3]" />
         <span className="hidden text-xs font-medium uppercase tracking-[0.18em] [writing-mode:vertical-rl] sm:block">
-          Access
+          
         </span>
       </button>
 
