@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import Script from "next/script";
 
 import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/accessibility/AccessibilityWidget";
@@ -92,6 +93,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z6Y51ZJFQP"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            window.gtag = gtag;
+
+            gtag('js', new Date());
+            gtag('config', 'G-Z6Y51ZJFQP');
+          `}
+        </Script>
         <A11yProvider>
           <SplashProvider>
             <main>{children}</main>
