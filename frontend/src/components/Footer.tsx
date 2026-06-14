@@ -6,7 +6,6 @@ import {
   FaFacebookF,
   FaTiktok,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -16,7 +15,7 @@ export default function Footer() {
     <footer className="w-full bg-[#1E1E1E] text-white overflow-hidden">
       {/* TOP SECTION */}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10 lg:px-16 py-14 sm:py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 md:gap-12">
           
           {/* COMPANY INFO */}
           <div className="sm:col-span-2 lg:col-span-2 text-center sm:text-left">
@@ -62,6 +61,9 @@ export default function Footer() {
             <div className="flex items-center justify-center sm:justify-start gap-4 mt-8">
               <a
                 href="https://www.facebook.com/share/1HwdWvNbJU/?mibextid=wwXIfr"
+                aria-label="Visit IMAGIC on Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
                 <FaFacebookF size={18} />
@@ -69,6 +71,9 @@ export default function Footer() {
 
               <a
                 href="https://www.tiktok.com/@imagic.creation?_r=1&_t=ZS-96GFpyQ947u"
+                aria-label="Visit IMAGIC on TikTok"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
                 <FaTiktok size={18} />
@@ -76,6 +81,9 @@ export default function Footer() {
 
               <a
                 href="https://www.linkedin.com/company/imagic-creation/"
+                aria-label="Visit IMAGIC on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#8A2BE2] transition"
               >
                 <FaLinkedinIn size={18} />
@@ -165,6 +173,29 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+          {/* BADGE */}
+          <div className="text-center sm:text-left">
+            
+
+            
+              
+
+              <a
+                href="https://ebadge.bestweb.lk/api/v1/clicked/imagiccreation.lk/TopWeb/2026-June/Qualified"
+                aria-label="View IMAGIC BestWeb recognition badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-1 transition-transform hover:scale-105 hover:drop-shadow-[0_0_12px_rgba(138,43,226,0.6)]"
+              >
+                <Image
+                  src="https://ebadge.bestweb.lk/eBadgeSystem/domainNames/imagiccreation.lk/TopWeb/2026-June/Qualified/image.png"
+                  alt="BestWeb qualified badge"
+                  width={150}
+                  height={150}
+                />
+              </a>
+            
+          </div>
         </div>
 
         {/* DIVIDER */}
@@ -179,44 +210,35 @@ export default function Footer() {
             </p>
 
             {/* LEGAL LINKS */}
-            {/* LEGAL LINKS */}
-<div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm text-gray-400 text-center">
-  
-  <Link
-    href="/privacy-policy"
-    className="hover:text-white transition"
-  >
-    Privacy Policy
-  </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm text-gray-400 text-center">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition"
+              >
+                Privacy Policy
+              </Link>
 
-  <span className="mx-3 text-white/20 hidden sm:block">•</span>
+              <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-  <Link
-    href="/terms-and-conditions"
-    className="hover:text-white transition"
-  >
-    Terms & Conditions
-  </Link>
+              <Link
+                href="/terms-and-conditions"
+                className="hover:text-white transition"
+              >
+                Terms & Conditions
+              </Link>
 
-  <span className="mx-3 text-white/20 hidden sm:block">•</span>
+              <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-  <Link
-    href="/sitemap"
-    className="hover:text-white transition"
-  >
-    Sitemap
-  </Link>
+              <Link href="/sitemap" className="hover:text-white transition">
+                Sitemap
+              </Link>
 
-  <span className="mx-3 text-white/20 hidden sm:block">•</span>
+              <span className="mx-3 text-white/20 hidden sm:block">•</span>
 
-  <Link
-    href="/cookies"
-    className="hover:text-white transition"
-  >
-    Cookies
-  </Link>
-
-</div>
+              <Link href="/cookies" className="hover:text-white transition">
+                Cookies
+              </Link>
+            </div>
           </div>
         </div>
       </div>
