@@ -172,16 +172,16 @@ export default function CookiesPolicyPage() {
               </p>
 
               <div className="mt-6 space-y-2 text-gray-300">
-                <p>Email: hello@imagiccreation.com</p>
-                <p>Phone: +94 77 123 4567</p>
-                <p>Location: Kandy, Sri Lanka</p>
+                <p>Email: imagiccreations@outlook.com</p>
+                <p>Phone: +94 70 670 0770</p>
+                <p>Location: 13,2nd Lane,Nawala,Koswatta, Sri Lanka</p>
               </div>
             </div>
 
             {/* LAST UPDATED */}
             <div className="text-center pt-4">
               <p className="text-sm text-gray-500">
-                Last Updated — May 2026
+                Last Updated — June 2026
               </p>
             </div>
 

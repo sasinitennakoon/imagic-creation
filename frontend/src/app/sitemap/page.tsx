@@ -53,11 +53,10 @@ const sitemapSections = [
   {
     title: "Connect With Us",
     links: [
-      { name: "WhatsApp", href: "#" },
-      { name: "Instagram", href: "#" },
-      { name: "Facebook", href: "#" },
-      { name: "LinkedIn", href: "#" },
-      { name: "YouTube", href: "#" },
+      { name: "WhatsApp", href: "https://wa.me/94706700770" },
+      { name: "Facebook", href: "https://www.facebook.com/share/1HwdWvNbJU/?mibextid=wwXIfr" },
+      { name: "LinkedIn", href: "https://www.linkedin.com/company/imagic-creation/" },
+      { name: "Tiktok", href: "https://www.tiktok.com/@imagic.creation?_r=1&_t=ZS-96GFpyQ947u" },
     ],
   },
 ];
