@@ -11,27 +11,27 @@ const faqSections = [
       {
         question: "What services do you provide?",
         answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with your own answer.",
+          "We provide creative and digital solutions including video production, live production, photography, editing, graphic design, UI/UX design, and web design & development for individuals, businesses, and brands.",
       },
       {
         question: "How can I start a project with your team?",
         answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with your own answer.",
+          "Getting started is simple - contact us through phone, email, or our website with your project details. We’ll discuss your requirements, provide recommendations, and prepare a suitable proposal.",
       },
       {
         question: "Do you work with international clients?",
         answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with your own answer.",
+          "Yes. We collaborate with both local and international clients and support remote communication throughout the project process.",
       },
       {
         question: "How long does a typical project take?",
         answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with your own answer.",
+          "Project timelines vary depending on the scope and complexity. Smaller projects may take a few days, while larger productions or digital projects may require several weeks.",
       },
       {
         question: "Can I request custom packages?",
         answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with your own answer.",
+          "Absolutely. We offer flexible and customized packages based on your project goals, requirements, and budget.",
       },
     ],
   },
@@ -42,27 +42,27 @@ const faqSections = [
       {
         question: "Do you provide event photography?",
         answer:
-          "Replace this content with your photography related answer.",
+          "Yes. We cover a range of events including corporate events, celebrations, brand launches, and special occasions.",
       },
       {
         question: "Can I book outdoor shoots?",
         answer:
-          "Replace this content with your photography related answer.",
+          "Yes. Outdoor sessions can be arranged at your preferred location with planning based on concept, schedule, and conditions.",
       },
       {
         question: "Do you edit all photographs?",
         answer:
-          "Replace this content with your photography related answer.",
+          "Yes. All selected photographs go through professional editing and enhancement to maintain quality and consistency.",
       },
       {
         question: "How are final photos delivered?",
         answer:
-          "Replace this content with your photography related answer.",
+          "Final photographs are delivered digitally through secure online sharing methods in high-quality formats.",
       },
       {
         question: "Do you cover weddings?",
         answer:
-          "Replace this content with your photography related answer.",
+          "Yes. We provide wedding photography services with packages that can include pre-shoots, event coverage, and post-production editing",
       },
     ],
   },
@@ -73,27 +73,27 @@ const faqSections = [
       {
         question: "What types of videos do you create?",
         answer:
-          "Replace this content with your video production related answer.",
+          "We create promotional videos, corporate videos, event coverage, social media content, interviews, commercials, and creative storytelling productions.",
       },
       {
         question: "Do you provide scripting services?",
         answer:
-          "Replace this content with your video production related answer.",
+          "Yes. We support concept development, script writing, storyboarding, and production planning to help bring ideas to life effectively.",
       },
       {
         question: "Can you handle drone videography?",
         answer:
-          "Replace this content with your video production related answer.",
+          "Yes. Drone videography can be arranged depending on project requirements, location permissions, and weather conditions.",
       },
       {
         question: "How long does editing take?",
         answer:
-          "Replace this content with your video production related answer.",
+          "Editing duration depends on the project scope, footage volume, and revision requirements. Estimated delivery timelines are shared before production begins.",
       },
       {
         question: "Can revisions be requested?",
         answer:
-          "Replace this content with your video production related answer.",
+          "Yes. Revision rounds are available based on the selected package to ensure the final output aligns with your expectations.",
       },
     ],
   },
@@ -104,27 +104,27 @@ const faqSections = [
       {
         question: "Do you build responsive websites?",
         answer:
-          "Replace this content with your web related answer.",
+          "Yes. All websites are designed and developed to provide a seamless experience across desktop, tablet, and mobile devices.",
       },
       {
         question: "Which technologies do you use?",
         answer:
-          "Replace this content with your web related answer.",
+          "We work with modern technologies and frameworks selected based on project requirements to deliver performance, scalability, and great user experiences.",
       },
       {
         question: "Will I be able to manage the website later?",
         answer:
-          "Replace this content with your web related answer.",
+          "Yes. Depending on the project, we can provide user-friendly content management solutions and guidance for future updates.",
       },
       {
         question: "Do you provide hosting support?",
         answer:
-          "Replace this content with your web related answer.",
+          "Yes. We can assist with hosting setup, deployment, domain configuration, and ongoing website support.",
       },
       {
         question: "Can you redesign existing websites?",
         answer:
-          "Replace this content with your web related answer.",
+          "Yes. We redesign existing websites to improve usability, visual appearance, performance, and overall user experience.",
       },
     ],
   },
@@ -135,27 +135,27 @@ const faqSections = [
       {
         question: "How do pricing plans work?",
         answer:
-          "Replace this content with your pricing related answer.",
+          "Pricing is customized based on project scope, deliverables, timelines, and required services. Contact us for a tailored quotation.",
       },
       {
         question: "Do you offer ongoing support?",
         answer:
-          "Replace this content with your pricing related answer.",
+          "Yes. We provide post-project support and maintenance options depending on project requirements.",
       },
       {
         question: "Are revisions included in packages?",
         answer:
-          "Replace this content with your pricing related answer.",
+          "Most packages include revision rounds. The exact number varies depending on the selected service package.",
       },
       {
         question: "What payment methods do you accept?",
         answer:
-          "Replace this content with your pricing related answer.",
+          "We accept bank transfers and other agreed payment methods discussed during project confirmation.",
       },
       {
         question: "Can projects be completed urgently?",
         answer:
-          "Replace this content with your pricing related answer.",
+          "Yes. Urgent projects can be accommodated depending on availability and project scope.",
       },
     ],
   },
