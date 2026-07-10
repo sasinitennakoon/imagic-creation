@@ -27,11 +27,12 @@ export default function Testimonials() {
     load();
   }, []);
 
-  const shouldCarousel = testimonials.length >= 3;
+  // const shouldCarousel = testimonials.length >= 3;
+  const shouldCarousel = false; // 🔒 carousel disabled for now — cards render statically
 
- 
+
   // AUTO SLIDE ONLY FOR 3+
-
+  /*
   useEffect(() => {
     if (!shouldCarousel) return;
 
@@ -42,10 +43,11 @@ export default function Testimonials() {
 
     return () => clearInterval(timer);
   }, [shouldCarousel]);
+  */
 
 
   // INFINITE LOOP RESET
-
+  /*
   useEffect(() => {
     if (!shouldCarousel) return;
 
@@ -58,6 +60,7 @@ export default function Testimonials() {
       return () => clearTimeout(timer);
     }
   }, [current, testimonials, shouldCarousel]);
+  */
   
   if (testimonials.length === 0) {
     return (
@@ -110,7 +113,7 @@ export default function Testimonials() {
               className={`grid gap-6 ${
                 testimonials.length === 1
                   ? "grid-cols-1 max-w-xl mx-auto"
-                  : "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               }`}
             >
               {testimonials.map((t) => (
@@ -119,7 +122,7 @@ export default function Testimonials() {
             </div>
           )}
 
-          {/* CAROUSEL MODE (3+) */}
+          {/* CAROUSEL MODE (3+) — disabled for now */}
           {shouldCarousel && (
             <motion.div
               className="flex gap-6"
@@ -143,7 +146,7 @@ export default function Testimonials() {
           )}
         </div>
 
-        {/* DOTS ONLY FOR 3+ */}
+        {/* DOTS ONLY FOR 3+ — disabled for now */}
         {shouldCarousel && (
           <div className="flex justify-center gap-2 mt-10">
             {testimonials.map((_, i) => (
